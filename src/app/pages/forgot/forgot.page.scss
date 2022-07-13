@@ -1,0 +1,232 @@
+.title {
+    margin-top: 25px;
+    color: #000000;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  h1 {
+    margin-top: 25px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  ion-label{
+      font-size: 17px;
+    margin-bottom: 5px;
+    color: #A1A1A2;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+
+ion-grid{
+    margin-top: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  
+  .root {
+    --ion-background-color: #910F91; 
+    font-family: 'IBM Plex Sans', sans-serif !important;   
+  }
+  h1 {
+    margin-top: 25px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  h7{
+    font-size: 12px; 
+    color: #A1A1A2;
+    margin-left: 5px; 
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  ion-label{
+    margin-left: 5px;
+    color: #A1A1A2;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  .title {
+    margin-top: 25px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-size: 18px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  .subtitle {
+    color: #000000;
+    font-size: 12px;
+    margin: 0px 0px 2px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  h6.forgot {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5em 0 3em;
+  }
+  ion-input
+  {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    background-color: #ffffff;
+    border: 1px solid #A1A1A2;
+    --border-radius: 0px;
+    width: 100%;
+    height: 47px;
+    padding: 5px 0px 0px !important;
+    font-size: 17px;
+    margin: 0px 0px 2em;
+  }
+ 
+  ion-button
+  {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    text-transform: none;
+    margin-top: 0em;
+    margin-right: 20px;
+  }
+
+  .btn_class {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: white;
+    height: 50px;
+    --border-radius: 0px;
+    text-transform: none;
+    
+}
+  
+  p.error {
+    color: #A1A1A2 !important;
+    font-size: 12px !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  
+  .ion-color-medium1 {
+    
+    --ion-color-base: #F97012 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #75CBF7 !important;
+    --ion-color-tint: #75CBF7 !important;
+  }
+  
+  .ion-color-medium {
+   
+    --ion-color-base: #000000 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #75CBF7 !important;
+    --ion-color-tint: #75CBF7 !important;
+  }
+  
+
+
+
+
+
+
+
+
+.main_content_div {
+  font-family: 'IBM Plex Sans', sans-serif !important;
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    ion-icon {
+        color: var(--ion-color-primary);
+        font-size: 20px;
+        padding: 10px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .iconDiv {
+      font-family: 'IBM Plex Sans', sans-serif !important;
+        // margin-top: 80px;
+        text-align: center;
+        .icon {
+            // height: 50px;
+            width: 60px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+
+    .form_div {
+        padding: 25px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        position: relative;
+        .main_head {
+            display: block;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            color: var(--ion-color-primary);
+            font-weight: 600;
+            font-size: 30px;
+            margin: 10px;
+        }
+        ion-label {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            font-size: 12px;
+            color: white;
+        }
+
+        .forgot {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            display: block;
+            text-align: center;
+            color: white;
+        }
+        ion-input {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            --padding-start: 8px;
+            --padding-end: 10px;
+            border: 1px solid lightgray;
+        }
+
+        ion-button {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            margin-top: 20px;
+            --border-radius: 20px;
+            --background: var(--ion-color-primary);
+            --color: white;
+        }
+        .tri {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 15px solid white;
+            position: absolute;
+            top: -15px;
+        }
+        .lbl {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            margin-top: 20px;
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        .signup_span {
+          font-family: 'IBM Plex Sans', sans-serif !important;
+            color: white;
+            font-weight: 600;
+            font-size: 17px;
+        }
+    }
+}

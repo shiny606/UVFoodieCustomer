@@ -1,0 +1,84 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="util.back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="font-size: 17px;">{{util.translate('Add new address')}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar style="margin-top: 10px;" [placeholder]="util.translate('Search location')" select-all (ionChange)="onSearchChange($event)"
+    [debounce]="250"  [(ngModel)]="autocomplete1.query">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItems1" (click)="selectSearchResult1(item)">
+      {{ item.description }}
+      <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    </ion-item>
+  </ion-list>
+  <ion-button class="curr" style="font-size: 14px;text-align: left;" (click)="getLocation()" fill="clear" shape="round" color="primary"><span><ion-icon style="width: 20px; height: 20px;" name="locate-outline"></ion-icon></span>
+    {{util.translate('Use my current location')}}
+  </ion-button>
+  
+  <div class="div_map" #map></div>
+  <div class="informations">
+
+    <ion-item>
+      <ion-label position="stacked">{{util.translate('LOCATIONS')}}</ion-label>
+      <ion-textarea rows="3" [(ngModel)]="address"></ion-textarea>
+      <!-- <ion-input [(ngModel)]="address"></ion-input> -->
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{util.translate('HOUSE / FLAT NO')}}</ion-label>
+      <ion-input [(ngModel)]="house"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{util.translate('LANDMARK')}}</ion-label>
+      <ion-input [(ngModel)]="landmark"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{util.translate('PINCODE')}}</ion-label>
+      <ion-input type="tel" maxlength="6" inputmode="number" pattern="0-9" [(ngModel)]="pincode"></ion-input>
+    </ion-item>
+
+    <ion-radio-group [(ngModel)]="title" mode="md">
+
+      <ion-label class="title">
+        {{util.translate('SAVE AS')}}
+      </ion-label>
+
+      <ion-item style="margin-top: 20px;">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>{{util.translate('HOME')}}</ion-label>
+        <ion-radio value="home"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+        <ion-label>{{util.translate('WORK')}}</ion-label>
+        <ion-radio value="work"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="navigate-outline" slot="start"></ion-icon>
+        <ion-label>{{util.translate('OTHER')}}</ion-label>
+        <ion-radio value="other"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-button *ngIf="from ==='new'" (click)="addAddress()" expand="block">
+      {{util.translate('Add')}}
+    </ion-button>
+
+    <!-- <ion-button *ngIf="from ==='edit'" (click)="updateAddress()" expand="block">
+      {{util.translate('Update')}}
+    </ion-button> -->
+  </div>
+</ion-content>

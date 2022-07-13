@@ -1,0 +1,152 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-col size="1">
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <div class="mainContent">
+    <div class="foodsContent">
+      <ion-label class="restname">{{name}}</ion-label>
+      <ion-label class="small_lbls" color="primary">{{address}} <span style="color: #A1A1A2;">| </span>{{time}}
+        {{util.translate('mins')}} </ion-label>      
+        <!-- <ion-row nowrap class="headerChip">
+          <div *ngFor="let types of dummyFoods1; let j = index">
+            <ion-label class="small_lbls" style="width: fit-content;"><span
+                style="color: #2dd36f; font-size: 14px;margin-right: 10px;font-weight: 300px;"><b>.</b>
+              </span>{{types.name}}</ion-label>
+
+            <div></div>
+
+          </div>
+        </ion-row> -->
+      <ion-row>
+
+        <div>
+          <ion-label class="btnsadds" style="text-align: left; padding: 10px;"><span
+              style="color: #16be49;"><b>{{total_dish_count}} + </b></span><br>Dishes</ion-label>
+        </div>
+
+
+        <div>
+          <ion-label class="btnsadds" style="text-align: left; padding: 10px;"><span
+              style="color: #16be49;"><b>{{rating}}</b></span><br>Rating</ion-label>
+        </div>
+
+        <div>
+          <ion-label class="btnsadds" style="text-align: left;padding: 10px;"><span
+              style="color: #16be49;"><b>{{total_deliveries}} + </b></span><br>Deliveries</ion-label>
+        </div>
+
+      </ion-row>
+
+       <div class="div_searchbar" >
+        <ion-searchbar animated="true" [(ngModel)]='listFilter' [placeholder]="util.translate('Search by Food')"
+          (ionChange)="onSearchChange($event)" [debounce]="250" class="search_bar"></ion-searchbar>
+         
+      </div> 
+
+      <div>
+
+        <ion-segment scrollable [(ngModel)]="vegDefault">
+          <ion-segment-button style="text-transform: none;" value="All" (click)="segmentChanged(1)">
+            <ion-label style="font-size: 15px;"> All </ion-label>
+          </ion-segment-button>
+          <ion-segment-button style="text-transform: none;" value="Veg" (click)="segmentChanged(2)">
+            <ion-label style="font-size: 15px;"> Veg </ion-label>
+          </ion-segment-button>
+          <ion-segment-button style="text-transform: none;" value="Non Veg" (click)="segmentChanged(3)">
+            <ion-label style="font-size: 15px;"> Non Veg </ion-label>
+          </ion-segment-button>
+          <ion-segment-button style="text-transform: none;" value="Others" (click)="segmentChanged(4)">
+            <ion-label style="font-size: 15px;"> Others </ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <div class="description" *ngFor="let item of foods;let i = index">
+          <ion-row>
+            <ion-col size="12">
+              <input class="toggle-box" checked="true" id="list-item-{{item.name}}" type="checkbox">
+              <label for="list-item-{{item.name}}">{{item.name}}</label>
+              <div class="toggle-box-content">
+                <ion-row style="margin-top: 20px;" *ngFor="let item_dishes of item.all_dishes;let j = index">
+                  <ion-col size="3" >
+                    <div>
+                      <img style="border-radius: 10px; width: 50px;height: 50px; margin-left: -30px;" [src]="api.mediaURL+item_dishes.cover"
+                        class="image_div" onError="this.src='assets/dumimg.png'" [alt]="item.name">
+                    </div>
+                  </ion-col>
+                  <ion-col size="1" >
+                    <div>
+                      <ion-img [src]="item_dishes.veg_image" style="width: 20px;
+      margin: 2px auto 0; margin-top: 15px;margin-left: -20px;" onError="this.src='assets/veg.png'"></ion-img>
+                    </div>
+                  </ion-col>
+                  <ion-col size="5">
+                    <ion-label class="heading_lblsml" style="font-size: 15px;">
+                      {{item_dishes.name}}
+
+                    </ion-label>
+                    <ion-label class="heading_lblsml" style="font-size: 15px;">₹ {{item_dishes.price}}</ion-label>
+                  </ion-col>
+                  <div *ngIf="!cart.itemId.includes(item_dishes.id)">
+                    <ion-button (click)="add(j,i)" color="mediums" class="btnsadd">{{util.translate('ADD')}}
+                    </ion-button>
+                  </div>
+
+                  <div class="cartBtn3" *ngIf="cart.itemId.includes(item_dishes.id)">
+
+                    <ion-button (click)="removeQ(j,i)" fill="clear" size="small">
+                      <ion-icon name="remove-circle" style="color: black;"></ion-icon>
+                    </ion-button>
+                    <p class="qunitity" style="color: #2dd36f;">{{item_dishes.quantiy}}</p>
+
+                    <ion-button (click)="addQ(j,i)" fill="clear" size="small">
+                      <ion-icon name="add-circle" style="color: black;"></ion-icon>
+                    </ion-button>
+                  </div>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+      
+      <div *ngFor="let item of dummy">
+        <ion-list>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+
+
+<ion-footer *ngIf="cart.cart.length && cart.cart.length > 0" (click)="viewCart()">
+  <ion-toolbar color="medium">
+    <ion-label color="light">{{cart.totalItem}} {{util.translate('Items')}} | ₹ {{cart.totalPrice}}</ion-label>
+    <ion-button class="txt_class" slot="end" fill="clear" color="light">
+      <ion-icon slot="end" name="cart-outline"></ion-icon>
+      {{util.translate('View Cart')}}
+    </ion-button>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-toolbar>
+</ion-footer>

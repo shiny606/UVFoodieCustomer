@@ -1,0 +1,292 @@
+
+.main_content_div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    .upper_div {
+        height: 100%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        #map {
+            width: 100%;
+            height: 100%;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+    
+        .head_lbl {
+            font-weight: 600;
+            font-size: 20px;
+            margin-top: 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+
+        .driver_detail_div {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .back_image {
+                height: 90px ;
+                width: 90px ;
+                border-radius: 100px;
+                border-color: #F97012;
+                text-align: center;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                margin-top: -15%;
+                min-width: 50px;
+                margin-left: 40%;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            
+            .address {
+                color: gray;
+                width: 80%;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            ion-button {
+                position: absolute;
+                right: -3px;
+                top: -5px;
+                --border-radius: 3px;
+                font-weight: 600;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+        .address1 {
+            color: gray;
+            width: 80%;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+
+        .order_detail {
+            font-weight: bold;
+            margin-top: 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .order_status {
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            position: absolute;
+            right: 20px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            text-transform: none;
+        }
+    }
+
+    .lower_div {
+        height: 40%;
+        padding: 20px;
+        border-radius: 25px 25px 0px 0px !important;
+        background: #ffffff;
+        padding: 20px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        ion-label {
+            display: block;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+
+.txt_class {
+    color: white;
+    height: 50px;
+    --border-radius: 0px;
+   text-transform: none;
+   background-color: #F97012;
+   font-family: 'IBM Plex Sans', sans-serif !important;
+    
+}
+
+.ion-color-medium {
+   
+    --ion-color-base: #000000 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #75CBF7 !important;
+    --ion-color-tint: #75CBF7 !important;
+  }
+
+  .ion-color-mediums {
+   
+    --ion-color-base: #16be49 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #16be49 !important;
+    --ion-color-tint: #16be49 !important;
+  }
+
+  .back_images {
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 100%;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-width: 50px;
+}
+
+.boy_name {
+    
+    text-align: left !important;
+    width: 100%;
+    font-size: 15px;
+    
+    
+}
+
+.mainContent {
+    .restContent {
+        width: 100%;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .btnss {
+            background-image: linear-gradient(-230deg, #17181a63, #827777) !important;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            height: 150px;
+            .backIcon {
+                // position: absolute;
+                 left: 10px;
+                 top: 40px;
+                font-size: 17px;
+            }
+            .moreInfo {
+                // position: absolute;
+                // right: 10px;
+                // top: 40px;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+    .foodsContent {
+        position: absolute;
+        background: white;
+        height: 100%;
+        // overflow: scroll;
+        top: 20px;
+        border-top-left-radius: 10px !important;
+        border-top-right-radius: 10px !important;
+        width: 100%;
+        padding: 10px;
+        .restname {
+            font-size: 17px;
+            font-weight: bold;
+            color: black;
+            padding-left: 10px;
+        }
+        .cusine {
+            font-size: 17px;
+            color: lightgray;
+            padding-left: 10px;
+        }
+        .ratting {
+            font-size: 17px;
+            padding-left: 10px;
+        }
+        .deliveryAddress {
+            display: flex;
+            padding: 20px 10px 0px 10px;
+            .pin {
+                width: 25px;
+                height: 25px;
+            }
+            .address {
+                font-size: 17px;
+                margin: 0px;
+            }
+        }
+        .vegSection {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .cateTitle {
+            font-size: 17px;
+            font-weight: bold;
+            color: black;
+            padding-left: 10px;
+        }
+        .card_div {
+            .card {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                padding: 5px 10px;
+                .mainCat {
+                    display: flex;
+                    .image_div {
+                        border-radius: 10px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 120px !important;
+                        height: 120px !important;
+                        
+                    }
+                    .desc_div {
+                        margin-left: 20px;
+                        .heading_lbl {
+                            // font-size: 1rem;
+                            font-size: 17px;
+                            display: block;
+                            text-align: left;
+                        }
+                        .ratting {
+                            // font-size: 0.8rem;
+                            font-size: 17px;
+                        }
+                        .small_lbl {
+                            font-size: 17px;
+                            color: lightgray;
+                            display: block;
+                            text-align: left;
+                        }
+                    }
+                    .cartBtn {
+                        position: absolute;
+                        right: 15px;
+                        width: 60px;
+                        background: white;
+                        .btns {
+                            border: 1px solid var(--ion-color-primary);
+                            border-radius: 10px;
+                            padding: 2px;
+                            font-size: 17px;
+                            text-align: center;
+                            color: var(--ion-color-primary);
+                        }
+                    }
+                    .cartBtn2 {
+                        position: absolute;
+                        right: 15px;
+                        width: 80px;
+                        display: flex;
+                        background: white;
+                        .qunitity {
+                            font-weight: bold;
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{util.translate('Coupons')}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-title *ngIf="!dummy?.length && !list?.length" style="text-align: center;">{{util.translate('No coupons found')}}</ion-title>
+  </div>
+  <!-- <div class="noData" *ngIf="!dummy?.length && !list?.length" [style.backgroundImage]="'url(assets/nothing.jpg)'">
+  </div> -->
+  <div *ngFor="let item of dummy">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-row *ngFor="let item of list" class="coupons" style="margin-top: 10px;">
+    <ion-col size="12" class="info">
+      <p class="title">
+        <span class="code" style="margin-top: 10px;"><b>{{util.translate('CODE :')}} {{item.code}}</b> </span><br><br>
+        <span class="desc" style="margin-top: 10px;">{{item.details}}</span><br><br>
+        <span class="expire" style="margin-top: 10px;">{{expire(item.expire)}}</span><br>
+        <!-- <span class="desc" style="margin-top: 10px;">{{util.translate('Get')}}{{item.type ==='per' ? '%' : util.currecny}}{{item.discount}}  to
+          {{item.type ==='per' ? '%' : util.currecny}} {{item.upto}}
+          {{util.translate('discount on minimum order')}}
+          {{util.translate('of')}}
+          {{util.currecny}}{{item.min}} 
+        </span> -->
+      </p>
+    </ion-col>
+    <ion-badge color="primary" class="ion-padding"  style="margin-top: 10px;" (click)="applyCoupon(item)" >{{util.translate('CLAIM')}}</ion-badge>
+    <div class="borderalign">
+    </div>
+  </ion-row>
+</ion-content>

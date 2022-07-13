@@ -1,0 +1,23 @@
+.o-video {
+    width: 100%;
+    height: 0;
+    position: relative;
+    padding-top: 56.25%; /* 9 / 16 * 100 */
+  }
+  .o-video > iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+  }
+
+
+  ion-grid {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+      background-color: transparent;
+     
+      height: 150px;
+    }
+    

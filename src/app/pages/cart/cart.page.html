@@ -1,0 +1,209 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-col size="1">
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="mainContent" >
+    <div class="noData" *ngIf="!cart.cart?.length">
+      <!-- <img src="assets/runing.gif" alt="" class="noDataImg"> -->
+      <ion-label>{{util.translate('Your Cart is Empty')}}</ion-label>
+      <ion-label>{{util.translate('Please add your favourite food')}}</ion-label>
+      <ion-button (click)="getCart()" expand="block" fill="outline">
+        {{util.translate('Browse your favourite restaurants')}}
+      </ion-button>
+    </div>
+    <div *ngIf="cart.cart?.length">
+      <!-- <ion-row style="padding-bottom: 10px; border-bottom: 1px solid lightgray;"
+        *ngIf="cart.cartStoreInfo && cart.cartStoreInfo.cover && cart.cart[0].restId === cart.cartStoreInfo.uid">
+        <ion-col size="4">
+          <div class="image_div"
+            [ngStyle]="{'background-image':'url('+api.mediaURL+cart.cartStoreInfo.cover+'),url(assets/placeholder.jpg)'}">
+          </div>
+        </ion-col>
+        <ion-col size="8">
+          <ion-label class="restname">{{cart.cartStoreInfo.name}}</ion-label>
+          <ion-label class="address">{{cart.cartStoreInfo.address}}</ion-label>
+        </ion-col>
+      </ion-row> -->
+      <ion-label class="bold_lbl" style="margin-left: 20px;"><b>My Cart</b></ion-label>
+      <ion-label class="bold_lbl" style="margin-left: 20px;"><b>My Orders</b></ion-label>
+      <div class="card_div">
+        <div class="card" *ngFor="let item of cart.cart;let i = index">
+          <div class="mainCat" *ngIf="item.quantiy > 0 && !item.selectedItem?.length">
+            <div class="image_div"
+              [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/dumimg.png)'}"></div>
+              <div >
+               <ion-img [src]="item.veg_image" style="width: 20px;
+              margin: 2px auto 0; margin-top: 15px;text-align: center; margin-left: 10px;"></ion-img> 
+              </div>
+              <div class="desc_div">
+              <ion-label class="heading_lbl">
+                {{item.name}}
+              </ion-label>
+              <ion-label class="heading_lbl">₹ {{item.price}}</ion-label>
+              
+            </div>
+            <div class="cartBtn2">
+              <ion-button (click)="removeQ(i)" fill="clear" size="small">
+                <ion-icon style="color: black;" name="remove-circle"></ion-icon>
+              </ion-button>
+              <p class="qunitity" style="color: #2dd36f;">{{item.quantiy}}</p>
+              <ion-button (click)="addQ(i)" fill="clear" size="small">
+                <ion-icon style="color: black;" name="add-circle"></ion-icon>
+              </ion-button>
+            </div>
+          </div>
+
+          <div *ngIf="item.quantiy > 0 && item.selectedItem?.length">
+            <div class="mainCat" *ngFor="let subItems of item.selectedItem;let j = index"
+              style="margin: 10px 0px !important;">
+              <div class="image_div"
+                [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/dumimg.png)'}">
+              </div>
+              <div class="desc_div">
+                <ion-label class="heading_lbl">{{item.name}}</ion-label>
+                <p *ngFor="let addods of subItems.item" style="margin: 0px;font-size: 15px;color: black;">
+                  - {{addods.name}}
+                  <span style="color: black;" *ngIf="util.cside ==='left'"> {{util.currecny}} {{addods.value}}</span>
+                  <span style="color: black;" *ngIf="util.cside ==='right'"> {{addods.value}} {{util.currecny}}</span>
+                </p>
+              </div>
+              <div class="cartBtn2">
+                <ion-button (click)="removeQAddos(i,j)" fill="clear" size="small">
+                  <ion-icon name="remove-circle" style="color: black;"></ion-icon>
+                </ion-button>
+                <p class="qunitity">{{subItems.total}}</p>
+                <ion-button (click)="addQAddos(i,j)" fill="clear" size="small">
+                  <ion-icon name="add-circle" style="color: black;"></ion-icon>
+                </ion-button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- <ion-textarea style="font-size: 12px;background: #f3f3f3;" [(ngModel)]="cart.orderNotes"
+        [placeholder]="util.translate('Add special cooking instructions')" rows="5"></ion-textarea>
+       -->
+
+       <ion-label class="bold_lbl" style="margin-left: 20px; margin-top: 20px; "><b>Add a Tip for your Rider</b></ion-label>
+        <ion-row>
+
+          <ion-segment style="margin-left: 5px;" scrollable   >
+            <ion-segment-button *ngFor="let itemtips of tips;let i = index" value="{{itemtips}}" style="margin-bottom: 10px;" (click)="getTips(itemtips)">
+               ₹ {{itemtips}}
+            </ion-segment-button>
+        </ion-segment>
+
+          <!-- <div >
+            <ion-label class="btnsadds" style="margin-left: 20px; text-align: left; padding: 10px; color: #f97012;">₹ 10</ion-label>
+          </div>
+          <div >
+            <ion-label class="btnsadds" style="text-align: left; padding: 10px; color: #f97012;">₹ 20</ion-label>
+          </div>
+          <div >
+            <ion-label class="btnsadds" style="text-align: left; padding: 10px; color: #f97012;">₹ 50</ion-label>
+          </div>
+          <div >
+            <ion-label class="btnsadds" style="text-align: left; padding: 10px; color: #f97012;">₹ 100</ion-label>
+          </div>
+          <div >
+            <ion-label class="btnsadds" style="text-align: left; padding: 10px; color: #f97012;">₹ 150</ion-label>
+          </div>     -->
+      </ion-row>
+  
+      <ion-label class="bold_lbl" style="margin-left: 20px; margin-top: 20px; "><b>Selected Address</b></ion-label>
+      <div class="borders"  >
+        <!-- <div *ngIf="from !='category' && from != 'changeaddress'">
+          <ion-label  style="margin-top: 20px;margin-left: 10px; ">{{cart.deliveryAddress}}</ion-label>
+        </div> -->
+        
+      <div>
+      <ion-label  style="margin-top: 20px;margin-left: 10px;" id="addresslabel">{{address}}</ion-label>
+    </div>
+      <ion-label class="title" style="margin-left: 60%; margin-top: 20px; font-size: 15px; color: #F97012;" (click)="changeDeliveryAddress()">Change Now</ion-label>
+    </div>
+      <ion-label class="title" style="margin-left: 20px; margin-top: 20px;">{{util.translate('Apply Promo/Discount code')}} <br>
+      </ion-label>
+       
+
+
+          <ion-row class="coupones" (click)="openCoupon();cart.coupon = null;cart.calcuate()" *ngIf="!cart.coupon">
+            <ion-col size="8">
+              <ion-label style="margin-top: 9px;">Apply coupon<br></ion-label>
+             
+            </ion-col>
+            <ion-col size="4">
+              <h5>
+                <ion-icon name="chevron-forward-outline" style="color: #F97012;
+            float: right;
+            font-weight: 600;
+            font-size: 14px; margin-bottom: 10px;" (click)="openCoupon();cart.coupon = null;cart.calcuate()"></ion-icon>
+              </h5>
+            </ion-col>
+          </ion-row>
+
+      <div class="coupones" *ngIf="cart.coupon && cart.coupon.promo_code">
+        <ion-label class="title" *ngIf="cart.coupon && cart.coupon.promo_code" style="margin-top: 10px;margin-bottom: 10px;">{{cart.coupon.promo_code}}<br>
+        </ion-label>
+        <!-- <ion-icon name="close-circle-outline" (click)="cart.coupon = null;cart.calcuate()" class="closedIcon">
+        </ion-icon> -->
+
+        <ion-icon name="chevron-forward-outline" class="closedIcon" style="color: #F97012;
+            font-size: 14px;margin-top: 10px; " (click)="openCoupon();cart.coupon = null;cart.calcuate()"></ion-icon>
+            
+      </div>
+      <ion-label class="bold_lbl" style="margin-left: 20px; margin-top: 20px; "><b>Total Payable</b></ion-label>
+      <div class="billing">
+       
+
+        <div class="singleRow" >
+          <ion-label class="headerTitle">{{util.translate('Rider Tip')}}</ion-label>
+           <ion-label *ngIf="tipsamount == null" class="price"><b>₹ 0</b></ion-label> 
+          <ion-label *ngIf="tipsamount != null" class="price"><b>₹ {{tipsamount}}</b></ion-label>
+        </div>
+        <div class="singleRow">
+          <ion-label class="headerTitle">{{util.translate('Sub Total')}}</ion-label>
+          <ion-label class="price"><b>₹  {{cart.totalPrice}}</b></ion-label>
+        </div>
+        <div class="singleRow">
+          <ion-label class="headerTitle">{{util.translate('Tax')}}</ion-label>
+          <ion-label class="price" ><b>₹ <span id="labelVal">{{taxVal}}</span> </b></ion-label>
+        </div>
+        <div class="singleRow">
+          <ion-label class="headerTitle">{{util.translate('Package Charge')}}</ion-label>
+          <ion-label class="price" ><b>₹ {{package_chargeVal}} </b></ion-label>
+        </div>
+        <div class="singleRow">
+          <ion-label class="headerTitle">{{util.translate('Discount')}}</ion-label>
+          <ion-label class="price" *ngIf="cart.coupon "><b> - ₹ {{cart.discount}}</b></ion-label>
+          <ion-label class="price" *ngIf="!cart.coupon "><b> - ₹ 0</b></ion-label>
+        </div>
+        <div class="singleRow" >
+          <ion-label class="headerTitle">{{util.translate('Delivery Charges')}}</ion-label>
+          <ion-label class="price"><b>₹ {{kmVal}}</b></ion-label>
+        </div>
+        <div class="singleRow1">
+          <ion-label class="headerTitle">{{util.translate('Grand Total')}}</ion-label>
+          <ion-label *ngIf="tipsamount == null" class="price" ><b>₹<span id="label1">{{cart.totalPrice * 1 + taxVal * 1 + package_chargeVal * 1 + kmVal * 1 - cart.discount * 1  | number:'1.2-2'}}</span> </b></ion-label>
+          <ion-label *ngIf="tipsamount != null" class="price" ><b>₹<span id="label2">{{tipsamount * 1 + cart.totalPrice * 1 + taxVal * 1 + package_chargeVal * 1 + kmVal * 1 -  cart.discount * 1 | number:'1.2-2'}}</span> </b></ion-label>
+          <!-- <ion-label class="price"><b>₹ {{cart.grandTotal}}</b></ion-label> -->
+        </div>
+      </div>
+     
+        <ion-button  (click)="proceedToPay()" class="btn_class" color="medium1" style="height: 40px; width: 90%; margin-left: 20px; margin-right: 20px;"> {{util.translate('Proceed to Pay')}}
+        </ion-button>
+  
+      <p class="instructions">
+        {{util.translate('Orders once placed cannot be cancelled and are non-refundable')}}
+      </p>
+
+      
+    </div>
+  </div>
+</ion-content>

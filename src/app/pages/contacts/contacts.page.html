@@ -1,0 +1,108 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{util.translate('Contact us')}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="main_div">
+
+      <div class="info_div">
+
+        <div class="name">
+          <div class="image_div">
+            <ion-icon name="person-outline"></ion-icon>
+          </div>
+          <div class="content_div">
+            <ion-input type="text" [placeholder]="util.translate('Full name')" [(ngModel)]="contact.name">
+            </ion-input>
+          </div>
+        </div>
+
+
+        <div class="name">
+          <div class="image_div">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <div class="content_div">
+            <ion-input type="text" [placeholder]="util.translate('Email')" [(ngModel)]="contact.email">
+            </ion-input>
+          </div>
+        </div>
+
+        <div class="name">
+          <div class="content_div">
+            <ion-textarea row="8" type="text" [placeholder]="util.translate('Message')" [(ngModel)]="contact.message">
+            </ion-textarea>
+          </div>
+        </div>
+        <ion-button (click)="submit()" expand="block" fill="clear" shape="round">
+          {{util.translate('Submit')}}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="flex_box" >
+    <ion-icon name="home-outline"></ion-icon>
+    <label>SVIRTZONE
+    </label>
+  </div>
+  <div class="flex_box" >
+    <ion-icon name="home-outline"></ion-icon>
+    <label> 3, Gangatharan street,Ambedkar Nagar, Saligramam,
+    </label>
+  </div>
+  <div class="flex_box" >
+    <ion-icon name="home-outline"></ion-icon>
+    <label> Chennai-600093,Tamilnadu,India.
+    </label>
+  </div>
+  <div class="flex_box">
+    <ion-icon name="mail-open-outline"></ion-icon>
+    <label> info@svirtzone.com</label>
+  </div>
+  <div class="flex_box" >
+    <ion-icon name="call-outline"></ion-icon>
+    <label>+91 98844 53817 / 18</label>
+  </div>
+  <div class="flex_box">
+    <ion-icon name="print-outline"></ion-icon>
+    <label for=""> Mon - Sat Day: 09.00 to 18.00 Sunday Closed</label>
+  </div> -->
+  <!-- <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="home-outline"></ion-icon>
+    <label> {{util.general.office_name}}
+    </label>
+  </div> -->
+  <!-- <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="home-outline"></ion-icon>
+    <label> {{util.general.address}}
+    </label>
+  </div> -->
+  <!-- <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="home-outline"></ion-icon>
+    <label> {{util.general.city}} - {{util.general.country}} - {{util.general.zip}}
+    </label>
+  </div> -->
+  <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="mail-open-outline"></ion-icon>
+    <label> {{util.general.email}} </label>
+  </div>
+  <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="call-outline"></ion-icon>
+    <label> {{util.general.mobile}} </label>
+  </div>
+  <!-- <div class="flex_box" *ngIf="util.general && util.general.address">
+    <ion-icon name="print-outline"></ion-icon>
+    <label for=""> {{util.general.time}} </label>
+  </div> -->
+  <!-- <div #map id="map"></div> -->
+</ion-content>

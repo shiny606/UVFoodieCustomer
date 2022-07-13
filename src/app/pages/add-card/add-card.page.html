@@ -1,0 +1,55 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-title style="font-size: 17px;"><b> {{util.translate('Add New Card')}}</b> </ion-title>
+  <div class="inputType">
+    <ion-label style="font-size: 14px;">NAME ON THE CARD</ion-label>
+    <ion-input type="text" [(ngModel)]="cname"></ion-input>
+  </div>
+  
+  <div class="inputType">
+    <ion-label style="font-size: 14px;">CARD NUMBER</ion-label>
+    <ion-input type="number"  [(ngModel)]="cnumber"></ion-input>
+  </div>
+  
+  <ion-label style="font-size: 14px;margin-left: 10px;">VALID THROUGH</ion-label>
+  <div class="inputType">
+    
+    <input type="text" name="month" maxlength="2" size="2" [(ngModel)]="month"/>
+    <input type="text" name="year"  maxlength="4" size="4" [(ngModel)]="year"/>
+    <!-- <span class="expiration">
+     
+      <input type="text" name="month" maxlength="2" size="2" [(ngModel)]="month"/>
+      <span>/</span>
+      <ion-label style="font-size: 14px;">YYYY</ion-label>
+      <input type="text" name="year"  maxlength="4" size="4" [(ngModel)]="year"/>
+  </span> -->
+    <!-- <ion-datetime [min]="minStartDate()" [max]="getMaxDate()" display-format="MM/YYYY" [(ngModel)]="date"
+      placeholder="VALID THROUGH MM/YYYY">
+    </ion-datetime> -->
+      <!-- <ion-input ><span><ion-input type="tel" [placeholder]="util.translate('(MM )')" [(ngModel)]="date" maxlength="2" minlength="0"></ion-input></span><span>/</span><span><ion-input type="tel" [placeholder]="util.translate('YYYY)')" [(ngModel)]="year" maxlength="4" minlength="0"></ion-input></span></ion-input> -->
+  </div> 
+  <div class="inputType">
+    <ion-label style="font-size: 14px;">CVV</ion-label>
+    <ion-input type="password"  [(ngModel)]="cvc"></ion-input>
+  </div>
+
+<!-- 
+  <div class="inputType">
+    <ion-label style="font-size: 14px;">EMAIL</ion-label>
+    <ion-input type="email"  [(ngModel)]="email"></ion-input>
+  </div> -->
+
+  <ion-button expand="full" color="primary" class="btn_addcard" (click)="addcard()">{{util.translate('Complete the Payment')}}
+  </ion-button>
+</ion-content>

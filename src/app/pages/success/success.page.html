@@ -1,0 +1,51 @@
+<!-- 
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Success</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="success-animation">
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+    </svg>
+  </div>
+
+  <h2 class="ion-text-center">Order Placed successfully</h2>
+  <p class="ion-text-center">Thank you for placing orders with us.. your order will delivered soon.. </p>
+</ion-content> -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Success</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeIt()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  color="light">
+
+
+  
+  <ion-grid class="success">
+    <ion-row>
+      <ion-col size="12">
+        <ion-img src="assets/tick-success.png"></ion-img>
+        <p>Your Order was Successful</p>
+        <div class="border"></div>
+      </ion-col>
+    </ion-row>
+  
+   
+  
+  </ion-grid>
+  
+  </ion-content>
+  

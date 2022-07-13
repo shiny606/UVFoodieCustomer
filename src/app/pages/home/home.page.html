@@ -1,0 +1,376 @@
+
+
+<ion-content>
+  <ion-toolbar>   
+    <h2 class="alignval">Delivering to</h2>
+    <ion-icon slot="end" style="height: 25px;width: 25px;margin-top: 10px;color: #FD0000;margin-right: 20px;" (click)="videopopup()" name="logo-youtube"></ion-icon>
+  </ion-toolbar> 
+  <div>
+    <ion-buttons slot="start">
+      <ion-button (click)="locationChange()">
+        <ion-icon name="location-outline"></ion-icon>       
+      </ion-button>  
+      <div class="locationText">  
+      <p class="ellipsis" >{{util.cityAddress}}</p> 
+    </div> 
+
+    </ion-buttons> 
+  </div>
+  <div class="div_searchbar" >
+    <ion-searchbar animated="true" [placeholder]="util.translate('Search by Restaurants or Food')"
+      (ionChange)="onSearchChangeFood($event)" [(ngModel)]="searchdata" [debounce]="250" class="search_bar"></ion-searchbar>
+      <!-- <ion-icon style="margin-left: 20px;height: 25px;width: 25px;" name="calendar-outline"></ion-icon> -->
+  </div> 
+    <ion-slides [options]="slideOptsOne" pager="true" class="thumnail-slider">             
+      <ion-slide *ngFor="let banner of bannerimage;index as i;let f=first;" >
+        <ion-card>
+            <img src={{banner.banner_image}}>                   
+        </ion-card>
+      </ion-slide>
+    </ion-slides>  
+  <ion-row>
+   <ion-label class="bold_lbl"  style="margin-left: 20px;margin-top: 5px; font-size: 15px;"><b>Categories</b></ion-label> 
+  <ion-label class="bold_lbl"  style="margin-left: 20px;margin-top: 5px; font-size: 15px;"><b>Search by KM</b></ion-label>
+   
+  <ion-item style="border:2px solid #F97012;width: 25%;height: 30px;margin-left: 20px;" >
+    <ion-select  [(ngModel)]="kmValue" style="width: 100%;text-align: center;margin-top: -20px;" (ngModelChange)="kmChange(kmValue)">
+      <ion-select-option *ngFor="let item of details;let i = index" value="{{item}}"  >{{item}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-row>
+ 
+
+ <ion-grid >
+    <ion-row class="ion-justify-content-between" style="margin-left: 10px;"> 
+      <ion-col *ngFor="let cate of CategoriesList" size="4" >
+      <div style="display: flex">
+      <ion-avatar  [class.highlighted]="highlighted == cate.id"  class="user_img" (click)="mainCateclick(cate.main_category,cate.id)">
+      <ion-img [src]="cate.category_image"></ion-img>
+      </ion-avatar>
+      </div>
+      <div style="display: flex">
+      <ion-label class="textxx">{{cate.main_category}}</ion-label>
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <p style="font-weight: bold;text-align: center;margin-left: 20px;margin-top:100px;margin-right: 20px;" *ngIf="!dummy?.length && !allRest?.length">
+    {{util.translate('Thanks for downloading UVFoodie. We are coming to your doorstep shortly!')}}
+  </p>
+ 
+
+    <ion-row>
+      <ion-col size="12" class="ion-no-padding">
+    <div *ngFor="let item of dummy"  >
+      <ion-list >
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!loaded"> 
+      <ion-col size="12" class="ion-no-padding">
+    <div  *ngFor="let item of [1,2,3,4,5,6,7,8]">
+      <ion-list >
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+    </ion-col>
+    </ion-row>
+ 
+    <ion-row *ngIf="loaded">
+        <ion-col size="12" class="ion-no-padding" *ngIf="!unSearchFood">
+     
+      <div *ngFor="let item of allRest; let i = index" class="main_content_div1">
+      <!-- <ion-row  [className]="item.isOpen === false || item.isClosed === '0' ? 'cardClosed ion-no-padding':'card ion-no-padding'"> -->
+        <ion-row  [className]="item.isClosed === '0' ? 'cardClosed ion-no-padding':'card ion-no-padding'">
+         
+          <ion-card style="border-radius: 15px;margin-left: 20px;margin-right: 20px;width: 100%;">
+           
+            <img style="height: 270px;width: 100%;"  (click)="openMenu(item)" [src]="api.mediaURL+item.cover"
+             onError="this.src='assets/dumimg.png'" [alt]="item.name" >
+            <!-- <div class="myOverlay" *ngIf ="item.available_coupons != ''">
+              <div class="ellipsis" style="margin-top: 5px;"><b>{{item.available_coupons}}</b></div>
+              
+           </div> -->
+         
+      
+        <ion-col size="12" style="margin-top: 20px;" >
+          <div class="desc_div" (click)="openMenu(item)" style="margin-top: 15px;margin-left: 10px;">
+            <div>
+            <ion-label class="heading_lbl" style="margin-top:10px;color: #000000;">
+            <b>  {{ (item.name.length>50)? (item.name | slice:0:50)+'..':(item.name) }}</b>
+            </ion-label>
+          </div>
+
+          <div style="margin-top: 5px;"  *ngIf ="item.available_coupons != ''">
+            <div  class="small_lbl" ><b>{{item.available_coupons}}</b></div>
+         </div>
+          <!-- <div>
+            <ion-label class="small_lbl">
+              {{ (item.address.length>30)? (item.address | slice:0:30)+'..':(item.address) }}
+            </ion-label>
+          </div> -->
+          <!-- <div>
+            <ion-label class="small_lbls" color="primary" >{{item.total_dish_count}} {{util.translate('+ Dishes')}} <span style="color: #A1A1A2;">| </span>{{item.time}}
+              {{util.translate('min')}} </ion-label></div>
+              
+              <div>
+              <ion-label class="rateNumber">{{item.rating}}</ion-label>
+              <ion-icon color="primary" style="margin-left: 3px;" name="star-outline"></ion-icon>
+            </div>
+             -->
+           
+            <div class="ellipsis">
+              <ion-label  *ngFor="let store_types of item.store_types; let j = index" class="small_lbl" ><span style="color: #2dd36f; font-size: 25px;margin-right: 5px;font-weight: 300px;" ><b>.</b>
+                </span>{{store_types.name}} 
+              
+              </ion-label>
+            </div>
+           
+          </div>
+
+        </ion-col>
+</ion-card>
+        <!-- <p class="closed" *ngIf="item && item.isOpen === false || item.isClosed === '0'">{{util.translate('Closed')}}
+        </p> -->
+        <!-- <ion-col size="2">
+          <div class="ratting">
+            <ion-label class="rateNumber">{{item.rating}}</ion-label>
+          </div>
+         
+        </ion-col> -->
+      </ion-row>
+
+    
+    </div>
+   
+  </ion-col>
+  <ion-col size="12" class="ion-no-padding" *ngIf="!SearchFood">
+     
+    <div *ngFor="let item of allRest; let i = index" class="main_content_div1">
+    <!-- <ion-row  [className]="item.isOpen === false || item.isClosed === '0' ? 'cardClosed ion-no-padding':'card ion-no-padding'"> -->
+      <ion-row  [className]="item.isClosed === '0' ? 'cardClosed ion-no-padding':'card ion-no-padding'">
+        <ion-card style="border-radius: 15px;margin-left: 20px;margin-right: 20px;width: 100%;">
+      <img style="height: 270px; width: 100%;"  (click)="openMenu(item)" [src]="api.mediaURL+item.cover"
+           onError="this.src='assets/dumimg.png'" [alt]="item.name" >
+          <!-- <div class="myOverlay" *ngIf ="item.available_coupons != ''">
+            <div class="ellipsis" style="margin-top: 5px;"><b>{{item.available_coupons}}</b></div>
+            
+         </div> -->
+       
+   
+      <ion-col size="12" style="margin-top: 20px;" >
+        <div class="desc_div" (click)="openMenu(item)" style="margin-top: 15px;margin-left: 10px;">
+          <div>
+          <ion-label class="heading_lbl" style="margin-top:10px;color: #000000;">
+           <b>{{ (item.name.length>50)? (item.name | slice:0:50)+'..':(item.name) }}</b> 
+          </ion-label>
+        </div>
+
+        <div style="margin-top: 5px;" *ngIf ="item.available_coupons != ''">
+          <div  class="small_lbl"><b>{{item.available_coupons}}</b></div>
+       </div>
+        <!-- <div>
+          <ion-label class="small_lbl">
+            {{ (item.address.length>30)? (item.address | slice:0:30)+'..':(item.address) }}
+          </ion-label>
+        </div>
+        <div>
+          <ion-label class="small_lbls" color="primary" >{{item.total_dish_count}} {{util.translate('+ Dishes')}} <span style="color: #A1A1A2;">| </span>{{item.time}}
+            {{util.translate('min')}} </ion-label></div>
+            
+            <div>
+            <ion-label class="rateNumber">{{item.rating}}</ion-label>
+            <ion-icon color="primary" style="margin-left: 3px;" name="star-outline"></ion-icon>
+          </div> -->
+          
+         
+          <div class="ellipsis">
+            <ion-label  *ngFor="let store_types of item.store_types; let j = index" class="small_lbl" ><span style="color: #2dd36f; font-size: 25px;margin-right: 5px;font-weight: 300px;" ><b>.</b>
+              </span>{{store_types.name}} 
+            
+            </ion-label>
+          </div>
+         
+        </div>
+        
+      </ion-col>
+    </ion-card>
+      <!-- <p class="closed" *ngIf="item && item.isOpen === false || item.isClosed === '0'">{{util.translate('Closed')}}
+      </p> -->
+      <!-- <ion-col size="2">
+        <div class="ratting">
+          <ion-label class="rateNumber">{{item.rating}}</ion-label>
+        </div>
+       
+      </ion-col> -->
+    </ion-row>
+
+  
+  </div>
+ 
+</ion-col>
+</ion-row>
+  
+  <!-- </div> -->
+
+  <!-- <div *ngIf="util.home_type ==='1'" class="main_content_div2">
+    <ion-slides [options]="slideOpts" *ngIf="banners?.length && allRest?.length">
+      <ion-slide *ngFor="let item of banners" (click)="openOffers(item)">
+        <div class="back_image" [style.backgroundImage]="'url('+api.mediaURL+ item.banner+')'"></div>
+      </ion-slide>
+    </ion-slides>
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let item of dummyBanners">
+        <ion-skeleton-text animated style="width: 100%;height: 100px;margin-left: 10px;border-radius: 5px;">
+        </ion-skeleton-text>
+      </ion-slide>
+    </ion-slides>
+    <ion-card *ngFor="let item of dummy">
+      <ion-skeleton-text animated
+        style="width: 100%;height: 150px;border-radius: 5px;border-bottom-right-radius: 0px;border-bottom-left-radius: 0px;">
+      </ion-skeleton-text>
+      <ion-card-content>
+        <ion-badge class="number_badge" color="light" mode="ios">
+          <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+        </ion-badge>
+        <ion-label class="bold_lbl">
+          <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+        </ion-label>
+        <ion-label class="small_lbl">
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </ion-label>
+        <div class="flex_div">
+          <ion-label class="distance_lbl">
+            <ion-skeleton-text animated style="width: 25px"></ion-skeleton-text>
+          </ion-label>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let item of allRest" (click)="openMenu(item)">
+      <div class="image_back"
+        [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/placeholder.jpg)'}">
+      </div>
+      <ion-card-content>
+        <ion-badge class="number_badge" mode="ios"
+          [ngStyle]="{'background-color': item.rating>=4?'#00a573':item.rating>=3 && item.rating<1?'#fcb813':'#d24141'}">
+          {{item.rating}}</ion-badge>
+        <ion-label class="bold_lbl">{{item.name}}</ion-label>
+        <ion-label class="small_lbl">{{ (item.cusine.length>30)? (item.cusine | slice:0:30)+'..':(item.cusine) }}
+        </ion-label>
+        <div class="flex_div">
+          <ion-label class="distance_lbl">
+            {{ (item.descriptions.length>80)? (item.descriptions | slice:0:80)+'..':(item.descriptions) }}
+          </ion-label>
+          <ion-label class="distance_lbl2">
+            {{item.dish}} {{util.translate('per person')}} | {{item.time}} {{util.translate('min')}}
+          </ion-label>
+        </div>
+
+        <ion-badge class="storeTime" *ngIf="item && item.isOpen === false || item.isClosed === '0'" mode="ios"
+          [ngStyle]="{'background-color': '##F53747'}">
+          {{util.translate('Closed')}}
+        </ion-badge>
+      </ion-card-content>
+    </ion-card>
+  </div> -->
+
+  <!-- <div *ngIf="util.home_type ==='2'" class="main_content_div3">
+    <ion-slides [options]="slideOpts" *ngIf="banners?.length && allRest?.length">
+      <ion-slide *ngFor="let item of banners" (click)="openOffers(item)">
+        <div class="back_image" [style.backgroundImage]="'url('+api.mediaURL+ item.banner+')'"></div>
+      </ion-slide>
+    </ion-slides>
+    <ion-slides [options]="slideOpts">
+      <ion-slide *ngFor="let item of dummyBanners">
+        <ion-skeleton-text animated style="width: 100%;height: 100px;margin-left: 10px;border-radius: 5px;">
+        </ion-skeleton-text>
+      </ion-slide>
+    </ion-slides>
+    <ion-row *ngFor="let item of dummy">
+      <ion-col size="4">
+        <ion-skeleton-text animated style="width: 100px;height:100px;"></ion-skeleton-text>
+      </ion-col>
+      <ion-col size="8">
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of allRest" class="main_div" (click)="openMenu(item)">
+      <ion-col size="4" class="image_back"
+        [ngStyle]="{'background-image':'url('+api.mediaURL+item.cover+'),url(assets/placeholder.jpg)'}"></ion-col>
+      <ion-col size="8">
+        <ion-label class="heading_lbl">
+          {{ (item.name.length>30)? (item.name | slice:0:30)+'..':(item.name) }}
+        </ion-label>
+
+        <ion-label class="small_lbl"> {{ (item.cusine.length>30)? (item.cusine | slice:0:30)+'..':(item.cusine) }}
+        </ion-label>
+        <div class="more_data">
+          <div class="information">
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-label class="lbl">
+              {{item.rating}}
+            </ion-label>
+          </div>
+          <div class="information">
+            <ion-icon name="time-outline"></ion-icon>
+            <ion-label class="lbl">
+              {{item.time}} {{util.translate('MINS')}}
+            </ion-label>
+          </div>
+          <div class="information">
+            <ion-icon name="cash-outline"></ion-icon>
+            <ion-label class="lbl">
+              {{item.dish}} {{util.translate('Per Person')}}
+            </ion-label>
+          </div>
+        </div>
+        <ion-label class="clbl" *ngIf="item && item.isOpen === false || item.isClosed === '0'">
+          {{util.translate('Closed')}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </div> -->
+</ion-content>

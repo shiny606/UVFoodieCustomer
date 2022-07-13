@@ -1,0 +1,184 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+   
+    <ion-buttons slot="end">
+      <ion-button color="light">
+        <ion-icon slot="end" name="chatbox-ellipses-outline"></ion-icon>
+        {{util.translate('Support')}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!loaded" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+    <ion-spinner color="primary" name="crescent"></ion-spinner>
+  </div>
+  <div class="main_content_div" *ngIf="loaded">
+    <ion-label class="header_lbl">{{order_id}}</ion-label>
+    <!-- <ion-label class="res_location">{{util.translate('This order with')}} {{restName}} {{util.translate('was')}}
+      {{status}}
+    </ion-label> -->
+
+    <ion-label class="res_location1" style="color: #F97012;">From</ion-label>
+    <ion-label class="res_location"><b>{{restName}}</b></ion-label>
+    <ion-label class="res_location">{{address}}</ion-label>
+
+    <ion-label class="res_location1" style="color: #F97012;margin-top: 20px;">Destination</ion-label>
+
+    <ion-label class="res_location"><b>{{deliveryAddress}}</b></ion-label>
+
+    <ion-label class="res_location1" style="color: green;margin-top: 20px;">Order Placed on</ion-label>
+    <ion-label class="res_location"> <b> {{time}}</b> | <b>{{time1}} </b> | <b> ₹ {{grandTotal}}</b></ion-label>
+
+    <ion-label class="res_location1" style="color: #F97012;" *ngIf="driverName != null && status != 'completed'" >Delivered by</ion-label>
+    
+    <ion-label  class="res_location" *ngIf="driverName != null && status != 'completed'"  ><b>{{driverName}}</b></ion-label>
+
+    <ion-label  class="res_location" *ngIf="driverMobile != null && status != 'completed'"  ><b>{{driverMobile}}</b></ion-label>
+    
+    <div *ngIf="driverName != null && status != 'completed' ">
+      <ion-button  (click)="callDriver()" size="small" fill="outline">
+        {{util.translate('Call Driver')}}
+      </ion-button> 
+      <ion-button style="margin-left: 20px;" (click)="WatsappDriver()" size="small" fill="outline">
+        {{util.translate('Watsapp')}}
+      </ion-button> 
+    </div>
+    
+    <ion-label class="res_location1" style="color: #F97012;">Bill details</ion-label>
+    
+    
+       
+
+   
+
+    <!-- <div class="line_div"></div> -->
+
+    <span *ngFor="let item of orders">
+
+      <div style="margin-top: 10px;" *ngFor="let subItems of item.selectedItem;let j = index" class="subNames">
+        <ion-label class="food_title">
+          {{item.name}} X
+          {{item.selectedItem[j].total}}</ion-label>
+        <div *ngFor="let addods of subItems.item" class="flex_titles">
+          <p class="sub_name">
+            - {{addods.name}}
+          </p>
+          <p class="sub_name" >
+            ₹ {{addods.value}}
+          </p>
+          <p class="sub_name" >
+            {{addods.value}} ₹
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 10px;" *ngIf="!item.selectedItem || !item.selectedItem.length">
+        <div class="flex_div">
+          <ion-label class="food_title">{{item.name}} X {{item.quantiy}} </ion-label>
+          <ion-label class="food_price" >₹ {{item.quantiy * item.price}}
+          </ion-label>
+         
+        </div>
+
+      </div>
+
+    </span>
+
+    
+    <ion-label style="margin-top: 10px;" style="margin-top: 5px; font-size: 15px">{{util.translate('Delivery Partner Fees')}}
+      <span class="prise_lbl" >₹ {{tips}}</span>
+     
+    </ion-label>
+
+    <div style="margin-top: 10px;" class="card_div"></div>
+
+    <ion-label style="margin-top: 10px; font-weight: 600px;">{{util.translate('Item Total')}}
+      <span class="prise_lbl" >₹ {{this.total * 1 + this.tips * 1}}</span>
+     
+    </ion-label>
+
+    <div style="margin-top: 10px;" class="card_div"></div>
+    <!-- <ion-label style="margin-top: 10px; font-weight: 600px;" *ngIf="coupon">{{util.translate('Coupon Discout')}}
+      <span class="prise_lbl" >₹ {{dicount}}</span>
+   
+    </ion-label> -->
+
+    <ion-label style="margin-top: 10px; font-weight: 600px;">{{util.translate('Tax')}}
+      <span class="prise_lbl" >₹ {{orderTax}}</span>
+   
+    </ion-label>
+
+    <ion-label style="margin-top: 10px; font-weight: 600px;">{{util.translate('Discount')}}
+      <span class="prise_lbl" >₹ {{discount}}</span>
+   
+    </ion-label>
+
+    <ion-label style="margin-top: 10px; font-size: 15px">{{util.translate('Package charge')}}
+      <span class="prise_lbl" >₹ {{package_charge}}</span>
+     
+    </ion-label>
+
+    <ion-label style="margin-top: 10px; font-size: 15px">{{util.translate('Delivery charge')}}
+      <span class="prise_lbl" >₹ {{delivery_charge}}</span>
+     
+    </ion-label>
+
+    <div style="margin-top: 10px;" class="card_div"></div>
+
+    
+    <ion-label style="margin-top: 10px; font-size: 15px">{{util.translate('Total to be paid')}}
+      <span class="prise_lbl" >₹ {{grandTotal}}</span>
+     
+    </ion-label>
+    <div style="margin-top: 10px;" class="card_div"></div>
+
+    
+
+    
+    <ion-label style="margin-top: 10px;" class="small_lbl1">{{util.translate('Paid via')}} {{paid}}
+      <span class="prise_lbl1" >{{util.translate('Bill Total')}} </span> 
+      <span class="prise_lbl" >₹ {{grandTotal}}</span></ion-label>
+  
+
+   
+<!-- 
+    <ion-label class="red_lbl" *ngIf="status =='created' ||status =='ongoing' || status =='accepted' " (click)="call()">
+      {{util.translate('Call Restaurant')}} {{restName}}</ion-label>
+
+    <ion-label class="red_lbl" *ngIf="status =='created' || status =='ongoing' || status =='accepted' " (click)="driverCall()">
+      {{util.translate('Call Driver')}} {{driverName}}</ion-label> -->
+      <ion-row style="margin-top: 15px; text-align: center;" class="btn_div">
+        <div >
+          <ion-button class="btn_class"  type="submit" expand="block"  (click)="restaurantAvailability()">
+            <span > {{util.translate('Repeat Order')}}</span>
+          </ion-button>
+        </div>
+        <div  *ngIf="status ==='completed'||status ==='delivered' || status === 'ongoing' || status === 'accepted'  || status ==='picked' || status ==='otp_verified'" (click)="presentAlertConfirm()" size="small">
+          <ion-button  class="btn_class1" color= "medium" type="submit" expand="block" >
+            <span > {{util.translate('Give Rating')}}</span>
+          </ion-button>
+        </div>
+      </ion-row>
+      
+      <div class="flex_div">
+        <ion-label class="fav_lbl" (click)="trackMyOrder()" *ngIf="status ==='picked'">
+          {{util.translate('Track Order')}}
+        </ion-label>
+
+        <!-- <ion-label class="fav_lbl" (click)="trackMyOrder()" *ngIf="status =='ongoing' || status ==='completed' || status ==='canceled' || status =='accepted'  ||  status =='otp_verified'  || status ==='picked' ">
+          {{util.translate('Track Order')}}
+        </ion-label> -->
+      </div>
+  </div>
+
+
+  
+</ion-content>

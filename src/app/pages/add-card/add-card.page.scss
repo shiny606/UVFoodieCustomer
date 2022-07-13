@@ -1,0 +1,59 @@
+
+.inputType {
+  margin-top: 30px;
+  margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #C6C6C6;
+   
+}
+
+.inputType1 {
+  margin-top: 30px;
+  margin-left: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    padding: 0px 5px;
+    border-bottom: 1px solid #C6C6C6;
+   
+}
+
+// .inputType {
+//   margin-bottom: 10px;
+//   padding: 0px 5px;
+//   box-shadow: 0px 0px 20px -3px rgba(30, 98, 255, 0.3);
+// }
+
+ion-datetime {
+    --padding-start: 0px;
+}
+.btn_addcard {
+ 
+  font-size: 14px;
+  margin-top: 20px;
+ 
+  text-align: center;
+  width: 80%;
+  height: 8%;
+  text-transform: none;
+  background-color: #ffffff;
+  color: #000000;
+}
+.inner{
+  display:inline-block;
+  width:calc(100% - 30px); /*30px. should be same as button width */ 
+}
+
+.expiration {
+  // border: 1px solid #bbbbbb;
+  margin-top: 30px;
+  margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 0px 5px;
+    border-bottom: 1px solid #C6C6C6;
+}
+.expiration input {
+  border: 0;
+}
+
+

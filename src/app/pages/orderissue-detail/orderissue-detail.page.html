@@ -1,0 +1,178 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-title style="margin-top: 20px;"><b>{{util.translate('Issue with this Orders')}}</b></ion-title>
+ 
+  <div class="line_divstop"></div> 
+  
+  <div *ngIf="!loaded" style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
+    <ion-spinner color="primary" name="crescent"></ion-spinner>
+  </div>
+  <div class="main_content_div" *ngIf="loaded">
+   
+  
+    <ion-label class="res_location"><b>{{restName}}</b></ion-label>
+    <ion-label class="res_location">{{address}}</ion-label>
+
+    <ion-label class="res_location"> <b> {{time}}</b> | <b>{{time1}} </b> | <b> ₹ {{grandTotal}}</b></ion-label>
+
+    
+    <table cellspacing="0" cellpadding="0">
+  
+      <tr>
+        <td width="75%"><div class="line_table" ></div></td>
+        <td width="15%">
+          <ion-label class="red_lbl" *ngIf="status =='created' ||status =='ongoing' || status =='accepted' || status =='completed' ">
+             {{status}}</ion-label>
+      </td>
+      <td width="10%">
+        
+    </td>
+       
+      </tr>
+      
+    </table>
+       
+
+   
+
+    
+
+
+    <span *ngFor="let item of orders">
+
+      <div  *ngFor="let subItems of item.selectedItem;let j = index" class="subNames">
+        <ion-label class="food_title">
+          {{item.name}} X
+          {{item.selectedItem[j].total}}</ion-label>
+        <div *ngFor="let addods of subItems.item" class="flex_titles">
+          <p class="sub_name">
+            - {{addods.name}}
+          </p>
+          <p class="sub_name" >
+            ₹ {{addods.value}}
+          </p>
+          <p class="sub_name" >
+            {{addods.value}} ₹
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 10px;" *ngIf="!item.selectedItem || !item.selectedItem.length">
+        <div class="flex_div">
+          <ion-label class="food_title">{{item.name}} X {{item.quantiy}} </ion-label>
+          <!-- <ion-label class="food_price" >₹ {{item.quantiy * item.price}}
+          </ion-label> -->
+         
+        </div>
+
+      </div>
+
+    </span>
+
+   
+
+
+  </div>
+  <div class="line_divs"></div> 
+
+  
+  <div class="description" >
+    <ion-row>
+      <ion-col size="12">
+        <div class="collapse-accordion">
+          <ul>
+            <li>
+              <input type="checkbox" checked id="list-item-1" name="accrodion">
+              <label for="list-item-1" class="first" style="font-size: 12dp;">I haven't received this order</label>
+              <ul >
+                <ion-row   style="margin-top: 20px;margin-bottom: 20px;font-size: 10dp;" >
+                 
+                    <div > 
+                      <label>I haven't received this order dummy
+                       
+                      </label>
+                    </div>
+
+                    <ion-row style="margin-top: 15px;">
+                      <div>
+                        <ion-button class="btn_class"  type="submit" (click)="chat()">
+                          <span > {{util.translate('Chat with Us')}}</span>
+                        </ion-button>
+                      </div>
+                      <div >
+                        <ion-button class="btn_class1" color= "medium"  (click)="Call()">
+                          <span > {{util.translate('Call Us')}}</span>
+                        </ion-button>
+                      </div>
+                    </ion-row>
+                        
+                  </ion-row>
+
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <input type="checkbox" checked id="list-item-2" name="accrodion">
+                <label for="list-item-2" class="first">Payment, Refund and Bill Related Queries</label>
+                <ul >
+                  <ion-row   style="margin-top: 20px;" >
+                    <ion-col size="2" style="text-align: center;">
+                     
+                    </ion-col>
+                    <ion-col size="1" style="text-align: center;">  
+                    </ion-col>                 
+                    </ion-row>
+  
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <input type="checkbox" checked id="list-item-3" name="accrodion">
+                  <label for="list-item-3" class="first">Items are different from what I ordered</label>
+                  <ul >
+                    <ion-row   style="margin-top: 20px;" >
+                      <ion-col size="2" style="text-align: center;">
+                        
+                      </ion-col>
+                      <ion-col size="1" style="text-align: center;">  
+                      </ion-col>                 
+                      </ion-row>
+    
+                    </ul>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <input type="checkbox" checked id="list-item-4" name="accrodion">
+                    <label for="list-item-4" class="first">Other Issues</label>
+                    <ul >
+                      <ion-row   style="margin-top: 20px;" >
+                        <ion-col size="2" style="text-align: center;">
+                         
+                        </ion-col>
+                        <ion-col size="1" style="text-align: center;">  
+                        </ion-col>                 
+                        </ion-row>
+      
+                      </ul>
+                    </li>
+                  </ul>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>

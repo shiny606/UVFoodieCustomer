@@ -1,0 +1,69 @@
+<!-- <ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-button> 
+    </ion-buttons> -->
+<!-- </ion-toolbar>
+</ion-header>  -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-col size="1">
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+<ion-row>
+ 
+  <h2 style="margin-top: 20px; font-size: 17px;margin-left: 20px; width: 80%;" ><span><b>Edit Basic Details</b></span> <span></span></h2>
+
+  <div>
+  <ion-buttons slot="end" style="float: right;">
+    <ion-button slot="end" style="float: right;" (click)="edit_flag = !edit_flag" *ngIf="edit_flag" >
+      <ion-icon style="float: right;" slot="icon-only" name="create-outline"></ion-icon>
+    
+    </ion-button>
+  </ion-buttons>
+</div>
+</ion-row>
+  <div class="user_img" [ngStyle]="{'background-image':'url('+api.mediaURLProfile+cover+'),url(assets/user1.png)'}"
+  (click)="updateProfile()">
+</div>
+
+  
+  <ion-grid  class="textclass" style="margin-top: 20px;">
+    <ion-list>
+      <ion-row>
+        <ion-label class="textclass">Phone Number </ion-label>
+      </ion-row>
+      <ion-row >
+        <ion-item >
+          <ion-input class="textclass" type="text"  [disabled]="edit_flag" [(ngModel)]="mobile"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+    <ion-list>
+      <ion-row>
+        <ion-label class="textclass">Email Address</ion-label>
+      </ion-row>
+
+      <ion-row>
+        <ion-item>
+          <ion-input class="textclass" type="text"  [disabled]="edit_flag"  [(ngModel)]="email"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+  </ion-grid>
+  <ion-button size="12" color="medium1" style="width: 90%;height: 7%;text-align: center;margin-left: 20px;" (click)="updateDetails()">Update Details
+  </ion-button>
+</ion-content>

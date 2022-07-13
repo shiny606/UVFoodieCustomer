@@ -1,0 +1,29 @@
+
+.otpContainer {
+    margin-top: 50%;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    .headerText {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 2rem;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .subTitleText {
+        text-align: center;
+        font-weight: bold;
+        color: gray;
+        font-size: 1rem;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .otpInputs {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .btn_class {
+        color: white;
+        margin: 30px 50px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}

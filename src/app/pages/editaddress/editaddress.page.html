@@ -1,0 +1,76 @@
+<!-- <ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-button> 
+    </ion-buttons> -->
+<!-- </ion-toolbar>
+</ion-header>  -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-col size="1">
+      <ion-icon (click)="back()" name="arrow-back-outline"></ion-icon>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <h2 style="margin-top: 20px; font-size: 17px;margin-left: 20px;" ><span><b>Edit Address</b></span> </h2>
+  <ion-grid style="margin-top: 20px;">
+    <ion-list >
+      <ion-row>
+        <ion-label floating>Building No</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input  style="font-family: 'IBM Plex Sans';" type="text" required [(ngModel)]="house"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+    <ion-list>
+      <ion-row>
+        <ion-label floating style="width: 100%;">Building Name</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input style="font-family: 'IBM Plex Sans';" type="text"  required  [(ngModel)]="address"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+    <ion-list>
+      <ion-row>
+        <ion-label floating>Address Lane 1</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input  style="font-family: 'IBM Plex Sans';" type="text"  required  [(ngModel)]="landmark"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+    <ion-list>
+      <ion-row>
+        <ion-label floating>Address Lane 2</ion-label>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-input style="font-family: 'IBM Plex Sans';" type="text"  required  [(ngModel)]="pincode"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-list>
+    <ion-row>
+      <ion-label class="textval" style="text-align: center;color: #F97012;" (click)="locationMap()">View Location in Map</ion-label>
+    </ion-row>
+  </ion-grid>
+  <ion-button size="12" color="medium1" style="width: 90%;height: 7%;text-align: center;margin-left: 20px; margin-top: 20px;" *ngIf="from ==='edit'" (click)="updateAddress()">Update Address
+  </ion-button>
+  <div class="div_map" #map ></div>
+ 
+</ion-content>

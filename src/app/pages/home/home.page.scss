@@ -1,0 +1,788 @@
+h2
+{
+margin-top: 10px; 
+font-size: 14px;
+font-weight: initial;
+   margin: 0 0 0;
+   text-transform: capitalize;
+   font-family: 'IBM Plex Sans', sans-serif !important;
+  
+}
+.ratting {
+    font-size: 1rem;
+    padding-left: 10px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.alignval{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #000000;
+    margin-left: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-toolbar:last-child {
+    --border-width: 0px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+.animated {
+    background-repeat: no-repeat;
+    background-position: left top;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+.header-md:after {
+    background: none;
+}
+
+.locationText {
+    height: 40px; 
+    max-height: 40px; 
+    margin-right: 20px;
+    width: 83%;
+    white-space: normal;
+    text-overflow: ellipsis;
+    text-align: center; 
+    font-size: 14px;
+    background-color: #FFF7ED;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+  
+
+.div_searchbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    margin-right: 20px;
+    // justify-content: space-between;
+    padding-left: 16px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    padding-top: 8px;
+    border: #FD0000;
+    color: #FD0000;
+    background-color: #FFFFFF;
+    
+}
+
+.search_bar {
+    padding: 0px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    border: #FD0000;
+    color: #FD0000;
+    --icon-color: #FD0000;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.right{
+    float:right;
+    text-align: right;
+    margin-left: 95%;
+ }
+
+
+.chips_div {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: transparent;
+    }
+    .chip {
+        border-radius: 3px;
+        padding: 5px 20px;
+        margin-right: 10px;
+        white-space: nowrap;
+        color: lightgray;
+        font-size: 15px;
+        font-weight: bold;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .selected {
+        border-radius: 3px;
+        padding: 5px 20px;
+        margin-right: 10px;
+        white-space: nowrap;
+        background: var(--ion-color-primary);
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+
+.noData {
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 250px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.main_content_div1 {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    float: left;
+    width: 100%;
+    clear: both;
+   
+    .back_image {
+        height: 150px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        // border-radius: 20px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+    .heading {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .heading_lbl {
+            font-size: 15px;
+            //font-family: open-bold;
+            display: block;
+            text-align: left;
+            color: var(--ion-color-primary);
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .small_lbl {
+            font-size: 15px;
+            color: lightgray;
+            //font-family: open-regular;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .small_lbls {
+            font-size: 15px;
+            color: primary;
+            //font-family: open-regular;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+
+    .slider_div {
+        .card {
+           
+            .back_image {
+                height: 200px;
+                width: 250px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+                position: relative;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+
+                .time_lbl {
+                    padding: 10px;
+                    position: absolute;
+                    background: white;
+                    bottom: 15px;
+                    right: 15px;
+                    border-radius: 25px;
+                    font-size: 15px;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                    //font-family: open-regular;
+                }
+            }
+            .heading_lbl {
+                font-size: 15px;
+                //font-family: open-bold;
+                display: block;
+                margin-top: 10px;
+                text-align: left;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .price_rating {
+                display: flex;
+                height: 25px;
+                align-items: flex-start;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                .rating {
+                    color: var(--ion-color-primary);
+                    font-size: 15px;
+                    margin-left: 10px;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+                .red_lbl {
+                    color: var(--ion-color-primary);
+                    font-size: 15px;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                    //font-family: open-regular;
+                }
+                .small_lbl {
+                    font-size: 15px;
+                    color: lightgray;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                    //font-family: open-regular;
+                }
+            }
+        }
+    }
+
+    .card_div {
+        .heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .heading_lbl {
+                font-size: 15px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                display: block;
+                text-align: left;
+                color: var(--ion-color-primary);
+            }
+            .small_lbl {
+                font-size: 15px;
+                color: lightgray;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+        .card {
+           
+            width: 100%;
+           
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            
+            .desc_div {
+                .heading_lbl {
+                    font-size: 1rem;
+                    display: block;
+                    text-align: left;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+                .small_lbl {
+                    font-size: 0.8rem;
+                    color: lightgray;
+                    display: block;
+                    text-align: left;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+            }
+            .ratting {
+                background: green;
+                padding: 2px 5px;
+                text-align: center;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                .rateNumber {
+                    color: white;
+                    font-size: 0.8rem;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+            }
+        }
+       
+    }
+}
+.main_content_div2 {
+    .back_image {
+        height: 150px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    ion-card {
+        margin: 0;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        --border-radius: 20px !important;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .image_back {
+            height: 150px;
+            width: 100%;
+            min-width: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+
+        
+
+        ion-card-content {
+            padding: 10px;
+            position: relative;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            
+            .small_lbl {
+                font-size: 15px;
+                color: black;
+                margin-bottom: 5px;
+                display: block;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .distance_lbl {
+                font-size: 15px;
+                color: gray;
+                display: flex;
+                flex-direction: row;
+                display: block;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .distance_lbl2 {
+                font-size: 15px;
+                color: gray;
+                display: flex;
+                flex-direction: row;
+                font-weight: bold;
+                display: block;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .number_badge {
+                position: absolute;
+                right: 10px;
+                top: 1px;
+                width: 40px;
+                padding: 5px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .storeTime {
+                position: absolute;
+                right: 10px;
+                bottom: 15px;
+                padding: 5px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+
+            .flex_div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+    }
+}
+
+.bold_lbl {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: black;
+    margin-bottom: 5px;
+    display: block;
+    margin-top: 20px;
+}
+.main_content_div3 {
+    .back_image {
+        height: 150px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .main_div {
+        margin: 10px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        .image_back {
+            height: 100px;
+            width: 100%;
+            min-width: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .heading_lbl {
+            font-size: 15px;
+            display: block;
+            text-align: left;
+            color: var(--ion-color-dark);
+            font-weight: bold;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .small_lbl {
+            font-size: 10px;
+            color: gray;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .clbl {
+            position: absolute;
+            bottom: 0px;
+            right: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--ion-color-danger);
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .more_data {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .information {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                ion-icon {
+                    font-size: 15px;
+                }
+                .lbl {
+                    font-size: 10px;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+            }
+        }
+    }
+}
+
+.user_img {
+    height: 60px;
+    width: 60px;
+    margin: auto;
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0px 0px 20px -3px rgba(16, 3, 3, 0.3);
+    min-width: 60px;
+}
+
+.textxx{
+    margin: auto;
+    font-size: 10px;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+  }
+
+.highlighted{
+    border: 4px solid #FFFFFF;
+    box-shadow: 0px 0px 20px 3px #F97012;
+    }
+
+
+    .cardcat {
+     height: 100px;
+    width: 100px;
+    border: 3px solid var(--ion-color-primary);
+     padding: 7px;
+
+  
+     }
+    .cardcat-1 {
+     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      }
+     .cardcat-1:hover {
+     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      }
+      
+
+.inline-button1 {
+    float: left;
+    width: 31%;
+    margin: 0 3px 1em; 
+
+}
+
+
+ion-segment{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    --indicator-color : transparent!important;
+}
+ion-segment-button{
+
+    --indicator-box-shadow: transparent!important;
+    font-size: 15px;
+     height: 30px;
+    min-height: 30px;
+    border-radius: 7px;
+    border: 1px solid lightgrey;
+    margin: 7px;
+    text-transform: none;
+    --background:#f3f3f3;
+    --color:gray;
+    --background-checked: #F97012!important;
+    --color-checked: white;
+    --indicator-color : transparent!important; /* this solution */
+//         font-size: 15px;
+     
+//         height: 30px;
+//   min-height: 30px;
+//     border-radius: 7px;
+//     border: 1px solid lightgrey;
+//     margin: 7px;
+//     text-transform: none;
+//     background-color: #f3f3f3;
+//     --indicator-color : transparent!important;
+    
+    
+}
+.segment-button-checked{
+    background-color: #F97012;
+        color: #ffffff !important;
+        border: 1px solid #F97012;
+        border-radius: 7px;
+        --indicator-color : transparent!important;
+}
+.Segmentone ion-segment-button {
+    min-width: 122px !important;
+    color: #60b244;
+}
+.Segmentone ion-segment-button {
+    min-width: 122px !important;
+    color: #60b244;
+}
+.Segmentone .segment-button-checked {
+    background-color: #F97012;
+    color: #ffffff !important;
+    border: 1px solid #F97012;
+    --indicator-color : transparent!important;
+}
+
+.center-cropped {
+    width: 180px;
+    height: 120px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+.segment-button.segment-activated{
+    background-color: #F97012 ;
+    color: #ffffff !important;
+    background: transparent !important;
+    --indicator-color : transparent!important;
+  }
+  .segment-button-md-text-color-activated{
+    color: #ffffff !important;
+  }
+  .ellipsis{
+    white-space: nowrap;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    .ellipsis1{
+        white-space: nowrap;
+        width: 100%;
+        height: 30px;
+        text-align: center;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        }
+
+    .myCard{
+        position:relative;
+      }
+      
+      .myOverlay{
+          width: 100%;
+          height: 30px;
+          font-size: 12px;
+          text-align: center;
+          position: absolute;
+          z-index: 99;
+          bottom: 0px;
+          text-overflow: ellipsis;
+          opacity: 0.8;
+          background: rgb(241, 8, 8);
+          color: #fff;
+      }
+
+
+      .rounds{
+        background-color: rgb(56, 226, 40);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+//       .cardClosed {
+//         display: flex;
+//         width: 100%;
+//         flex-direction: row;
+//         background: lightgrey;
+       
+//         border-radius: 15px;
+//         .image_div {
+//             border-radius: 10px;
+            
+//             width: 180px;
+// height: 120px;
+// object-fit: cover;
+//         }
+//         .desc_div {
+//             .heading_lbl {
+//                 font-size: 15px;
+//                 display: block;
+//                 margin-top: 10px;
+//                 text-align: left;
+//             }
+//             .small_lbl {
+//                 font-size: 15px;
+//                 margin-top: 10px;
+//                 color: lightgray;
+//                 display: block;
+//                 text-align: left;
+//             }
+//         }
+//         .ratting {
+//             background: green;
+//             padding: 2px 5px;
+//             text-align: center;
+//             .rateNumber {
+//                 color: white;
+//                 font-size: 0.8rem;
+//             }
+//         }
+//         .closed {
+//             position: absolute;
+           
+//             bottom: 0px;
+//             right: 0px;
+//             color: var(--ion-color-primary);
+//             font-weight: bold;
+//             border-radius: 5px;
+//             font-size: 1rem;
+//             padding: 5px;
+//         }
+//     }
+
+
+// .cardClosed{
+//     display: flex;
+//              width: 100%;
+//             flex-direction: row;
+//              background: rgb(145, 141, 141);
+//             border-radius: 15px;
+// }
+
+.cardClosed{
+    display: flex;
+             width: 100%;
+            flex-direction: row;
+             background: #ece7e7;
+            border-radius: 15px;
+}
+
+
+.thumnail-slider 
+ion-card {
+    width: 100%;
+    height: 100%;
+    border-color: #000;
+    border-width: 5px;
+    border-radius: 15px;
+    background-color: #000; // black
+    box-shadow: #000;
+    img {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+// .thumnail-slider  .swiper-slide-active {
+
+//     ion-card {
+//         img {
+//             width: 100%;
+       
+//             height: 120px;
+//         }
+//     }
+// }
+// .thumnail-slider ion-slide
+// {
+//     height: 100%;
+//     border-radius: 15px;
+//     overflow: hidden;
+// }
+
+// .thumnail-slider  ion-slide.md.swiper-slide.swiper-zoom-container.hydrated.swiper-slide-active {
+//     border-bottom: none;
+// }
+// ion-list.md.list-md.hydrated .thumnail-slider.swiper-container {
+//     height: 90px !important;
+//     width: 100% !important;
+// }
+
+
+   // background: var(--ion-color-primary);
+   
+   
+

@@ -1,0 +1,145 @@
+
+
+<ion-content class="ion-no-border" *ngIf="!util.appClosed">
+  <h2 style="margin-top: 30px; margin-left: 20px;"><b>My Profile</b></h2>
+  <div class="main_div">
+    <ion-row>
+      <ion-col style="text-align: center;margin-top: 20px;" >
+        <div class="user_img" [ngStyle]="{'background-image':'url('+getProfile()+'),url(assets/user1.png)'}">
+        </div>
+      </ion-col>
+     
+    </ion-row>
+  </div>
+
+
+  <ion-grid class="textclass">
+
+    <ion-row *ngIf = "skip != '1'" (click)="loginCall()" style="text-align: center;">
+      <ion-label style="font-size: 17px; margin-top: 20px;"><b>Login or SignUp to view your complete profile</b></ion-label>
+      <ion-button expand="block" fill="outline" style="text-transform: none;font-size: 17px">
+        <b>Continue</b>
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'"  (click)="editBasicDetails()">Basic details</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="editBasicDetails()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="manageAddress()">Manage Address</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="manageAddress()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="orderHistory()">Your Orders</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="orderHistory()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="transactionDetails()">Transactions & Refunds</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="transactionDetails()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;" (click)="addCards()">Wallet</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #f97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="addCards()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="helpClick()">Help</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="helpClick()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="contactUs()">Contact Us</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="contactUs()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf = "skip == '1'">
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="deactivateAcc()">Deactivate Account</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="deactivateAcc()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf = "skip == '1'">
+      <ion-col size="10">
+        <h5 style="margin-top: 20px; font-size: 15px;font-family: 'IBM Plex Sans'" (click)="logOut()">Log Out</h5>
+      </ion-col>
+      <ion-col size="2">
+        <h5>
+          <ion-icon name="chevron-forward-outline" style="color: #F97012;
+      float: right;
+      font-weight: 600;
+      font-size: 16px;" (click)="logOut()"></ion-icon>
+        </h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

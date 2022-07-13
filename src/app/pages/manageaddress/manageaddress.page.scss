@@ -1,0 +1,106 @@
+
+
+  
+.title {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #000000;
+    margin-left: 20px;
+    margin: 0px 0px 2em;
+}
+name{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #A1A1A2;
+    margin: 0px 0px 2em; 
+}
+.subtitle {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #F88256;
+    font-size: 43px;
+    margin: 0px 0px 12px;
+}
+ion-button
+{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    --border-radius: 0px; 
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  text-transform: none;
+  
+}
+p {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+.signnow
+{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+	color: #F88256;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+ion-label textalign{
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+ion-label{
+    margin-top: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+ion-input{
+    margin-top: 20px;
+    margin-left: 5px;
+    width:80%;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.ion-color-medium1 {
+    
+    --ion-color-base: #1fd15b !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #F97012 !important;
+    --ion-color-tint: #F97012 !important;
+  }
+
+  .list {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    margin-top: 20px;
+    margin-right: 5px;
+    position: relative;
+    // display: flex;
+    // flex-wrap: nowrap;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .scroll-item {
+        flex: 0 0 auto;
+
+    }
+    .title {
+        color: black;
+        font-size: 17px;
+        white-space: pre-wrap;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .name {
+        color: gray;
+        font-size: 17px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .moreIcon {
+        position: absolute;
+        right: 0px;
+        top: 1px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}

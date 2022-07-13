@@ -1,0 +1,43 @@
+
+.div_map {
+    height: 50vh;
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #F97012;
+}
+
+.informations {
+    padding: 16px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    ion-item {
+        --padding-start: 0px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+
+        ion-icon {
+            font-size: 20px;
+            color: gray;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+
+    .title {
+        display: block;
+        font-weight: bold;
+        margin-top: 15px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+    ion-button {
+        --border-radius: 5px;
+        margin-top: 10px;
+        text-align: left;
+
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+
+.curr{
+    --border-radius: 5px;
+    text-align: left;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}

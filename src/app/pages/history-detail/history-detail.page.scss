@@ -1,0 +1,349 @@
+
+.header_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    .support_lbl {
+        margin-right: 20px;
+        color: red;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+
+.main_content_div {
+    width: 100%;
+    padding: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    .line_div {
+        height: 1px;
+        width: 100%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        background: lightgray;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+   
+
+    ion-label {
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        display: block;
+    }
+
+    .header_lbl {
+        font-weight: 600;
+        font-size: 17px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .res_name {
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 15px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .res_location {
+        margin-top: 10px;
+        font-size: 15px;
+        width: 90%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .res_location1 {
+        margin-top: 10px;
+        font-size: 15px;
+        width: 90%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+       
+    }
+
+    .flex_div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .food_title {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .food_price {
+            font-size: 15px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+        .fav_lbl {
+            color: red;
+            font-size: 15px;
+            border: 1px solid red;
+            border-radius: 25px;
+            padding: 2px 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+
+    .subNames {
+        border-bottom: 1px dashed lightgray;
+        padding-bottom: 5px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .food_title {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .veg {
+                height: 12px;
+                width: 12px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .rate_lbl {
+                background: #b2d9b2;
+                border: 1px solid #7bdb7b;
+                padding: 3px 8px;
+                border-radius: 5px;
+                font-size: 15px;
+                font-weight: 600;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+        .flex_titles {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .sub_name {
+                margin: 0px;
+                color: black;
+                font-size: 15px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+    }
+
+    .card_div {
+        border-bottom: 1px dashed lightgray;
+        padding-bottom: 5px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .upper_div {
+            display: flex;
+            align-items: center;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .veg {
+                width: 12px;
+                height: 12px;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+
+        .lower_div {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .rate_lbl {
+                background: #b2d9b2;
+                border: 1px solid #7bdb7b;
+                padding: 3px 8px;
+                border-radius: 5px;
+                font-size: 15px;
+                font-weight: 600;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+    }
+
+    .prise_lbl {
+        position: absolute;
+        right: 20px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+    .prise_lbl1 {
+        position: absolute;
+        right: 100px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+    .head_gray {
+        color: gray;
+        font-size: 15px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .small_lbl {
+        font-size: 15px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        margin-bottom: 15px;
+    }
+
+    .small_lbl1 {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .red_lbl {
+        color: red;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+
+.btn_div {
+    display: flex;
+    justify-content: center;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    ion-button {
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        --border-radius: 0px;
+        width: 130px;
+    }
+    .ratae {
+        --background: var(--ion-color-warning);
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+
+.billing {
+    padding: 5px 10px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    .singleRow {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        .headerTitle {
+            font-size: 15px;
+        }
+        .boldClass {
+            font-weight: bold;
+        }
+        .headerTotal {
+            font-size: 15px;
+        }
+        .priceTotal {
+            font-size: 15px;
+        }
+        .price {
+            font-size: 15px;
+        }
+    }
+    .singleRow1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-top: 1px dashed lightgray;
+        .headerTitle {
+            font-size: 15px;
+        }
+        .boldClass {
+            font-weight: bold;
+        }
+        .headerTotal {
+            font-size: 15px;
+        }
+        .priceTotal {
+            font-size: 15px;
+        }
+        .price {
+            font-size: 15px;
+        }
+    }
+}
+
+.billing {
+    padding: 5px 10px;
+    .singleRow {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        .headerTitle {
+            font-size: 15px;
+        }
+        .boldClass {
+            font-weight: bold;
+        }
+        .headerTotal {
+            font-size: 15px;
+        }
+        .priceTotal {
+            font-size: 15px;
+        }
+        .price {
+            font-size: 15px;
+        }
+    }
+    .singleRow1 {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-top: 1px dashed lightgray;
+        .headerTitle {
+            font-size: 15px;
+        }
+        .boldClass {
+            font-weight: bold;
+        }
+        .headerTotal {
+            font-size: 15px;
+        }
+        .priceTotal {
+            font-size: 15px;
+        }
+        .price {
+            font-size: 15px;
+        }
+    }
+}
+.instructions {
+    color: var(--ion-color-primary);
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+.line_div1 {
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px dashed lightgray;
+    background: lightgray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn_class {
+    margin-top: 20px;
+    color: white;
+    height: 40px;
+    width: 130px;
+    --border-radius: 0px;
+    text-transform: none;
+    
+}
+.btn_class1 {
+    margin-top: 20px;
+    color: white;
+    height: 40px;
+    width: 130px;
+    margin-left: 15px;
+    --border-radius: 0px;
+    text-transform: none;
+    
+}
+
+
+.ion-color-medium {
+   
+    --ion-color-base: #F97012 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, #ffffff) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #ffffff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #ffffff !important;
+    --ion-color-tint: #ffffff !important;
+  }
+
+

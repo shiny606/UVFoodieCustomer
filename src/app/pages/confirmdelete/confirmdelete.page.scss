@@ -1,0 +1,78 @@
+
+ion-title {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    text-align: left;
+    padding-left: 0px;
+    color: #000000;
+    
+    font-size: 20px;
+    padding-right: 0;
+    margin-left: 20px;
+}
+
+ion-icon {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-size: 30px;
+    padding: 0px 7px 0px 0px;
+}
+ion-grid {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+.title {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    color: #000000;
+    font-size: 18px;
+    
+}
+
+.subtitle {
+  
+    color: #000000;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+
+ion-row.invest-section {
+    margin-left: 20px;
+    height: 100%;
+    margin: 3em 15px 0px 1em;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-col.invest{
+    margin-left: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-button {
+    text-align: center;
+   font-size: 15px;
+    margin-top: 3em;
+    height: 47px;
+   margin-left: 20px;
+    width: 150px;
+    text-transform: none;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.ion-color-medium {
+    
+    --ion-color-base: #F97012 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #F97012 !important;
+    --ion-color-tint: #F97012 !important;
+}
+.ion-color-mediums {
+   
+    --ion-color-base: #ffffff !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: #F97012;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #F97012 !important;
+    --ion-color-tint: #F97012 !important;
+}

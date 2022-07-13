@@ -1,0 +1,149 @@
+
+.title {
+    margin-top: 25px;
+    color: #000000;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    
+  }
+  h1 {
+    margin-top: 25px;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 2em;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+  ion-label{
+      font-size: 17px;
+    margin-bottom: 5px;
+    color: #A1A1A2;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+  }
+ion-header {
+    --box-shadow: none;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-footer {
+    --box-shadow: none;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-toolbar {
+    border-color: none !important;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    ion-title {
+        --color: white;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+.login-logo {
+    text-align: center;
+    margin: auto;
+    right: 0px;
+    left: 0px;
+    margin-top: 20%;
+    margin-bottom: 20px;
+    .logo_icon {
+        width: 110px !important;
+    }
+    .login-name {
+        margin: 0px;
+        font-size: 1.5rem;
+        
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+    .subTitle {
+        margin: 0px;
+        font-size: 1rem;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+}
+.frgTag {
+    font-size: 15px;
+    color: #000000;
+    text-align: right;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    
+}
+.btn_class {
+    color: white;
+    height: 50px;
+    --border-radius: 0px;
+    text-transform: none;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    
+}
+
+.btn_classSkip {
+    text-align: center;
+    background-color: #F97012;
+    color: white;
+    height: 40px;
+    width: 80px;
+    margin-top: 20%;
+    border-radius: 30px;
+    text-transform: none;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    
+}
+
+.login-logo img {
+    max-width: 150px;
+}
+.list {
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    margin-bottom: 0;
+}
+ion-list {
+    --ion-background-color: transparent;
+    margin: 0px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+ion-item {
+    background-color: #ffffff;
+    border: 1px solid #A1A1A2;
+    border-radius: 0px;
+    width: 100%;
+    height: 47px;
+    padding: 0px 0px 0px !important;
+    font-size: 17px;
+    margin: 0px 0px 2em;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.createAcc {
+    text-align: center;
+    font-size: 15px;
+    .registerTag {
+        color: var(--ion-color-primary);
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        font-weight: bold;
+    }
+}
+
+.ion-color-medium {
+   
+    --ion-color-base: #000000 !important;
+    --ion-color-base-rgb: var(--ion-color-medium-rgb, 146, 148, 156) !important;
+    --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+    --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255, 255, 255) !important;
+    --ion-color-shade: #75CBF7 !important;
+    --ion-color-tint: #75CBF7 !important;
+  }
+ 
+  .button-inner {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100%;
+    height: 100%;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    z-index: 1;
+}

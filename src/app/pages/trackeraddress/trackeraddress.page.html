@@ -1,0 +1,33 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div" >
+
+    <div class="upper_div">
+      <div #map id="map" class="map"></div>
+    </div>
+    
+  
+  </div>
+</ion-content>
+
+<ion-footer (click)="viewDetails()">
+  <ion-toolbar color="medium">
+    <ion-label color="light" ><span style="margin-left: 10px;"></span>Your order will reach in {{distanceval}} mins</ion-label>
+    <ion-button class="txt_class" slot="end" fill="clear" color="light" style="background-color: #30BF46;">
+      <ion-icon *ngIf="orderDetails!=true" slot="end" name="caret-up-outline"></ion-icon>
+      {{util.translate('Order Status')}}
+    </ion-button>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-toolbar>
+</ion-footer>

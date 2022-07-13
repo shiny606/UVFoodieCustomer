@@ -1,0 +1,75 @@
+
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div" >
+
+    <div class="upper_div">
+      <div #map id="map" class="map"></div>
+    </div>
+    
+     
+    <div class="lower_div" *ngIf="orderDetails" >
+      <!-- <ion-label class="head_lbl">{{util.translate('Order on the Way')}}</ion-label> -->
+      <div class="driver_detail_div" style="text-align: center;">
+        <div style="text-align: center;" class="back_image"
+          [ngStyle]="{'background-image':'url('+api.mediaURL+foodCover+'),url(assets/user1.png)'}"></div>
+        
+        </div>
+      <div class="driver_detail_div" style="text-align: left;">
+       
+        <div *ngFor="let types of totalOrders; let j = index">
+          <ion-label style="text-align: left;font-size: 15px;"  class="boy_name">{{types.name}}<span>,</span></ion-label>
+          <!-- <ion-label class="address1">{{restAddress}}</ion-label> -->
+          
+        </div>
+      </div>
+      <div>
+        <ion-button (click)="callDriver()" size="small" fill="outline">
+          {{util.translate('Call Driver')}}
+        </ion-button> 
+        <ion-button style="margin-left: 20px;" (click)="callWatsapp()" size="small" fill="outline">
+          {{util.translate('Watsapp')}}
+        </ion-button> 
+      </div>
+     
+     
+      <!-- <ion-label class="order_detail">{{totalOrders.length}} {{util.translate('Items to deliver')}}
+        <span style="color: var(--ion-color-primary);position: absolute;right: 20px;" *ngIf="util.cside==='left'">
+          {{util.currecny}} {{grandTotal}}</span>
+        <span style="color: var(--ion-color-primary);position: absolute;right: 20px;"
+          *ngIf="util.cside==='right'">{{grandTotal}} {{util.currecny}}</span>
+      </ion-label> -->
+      <ion-label class="order_detail">Ordered</ion-label>
+      <ion-label class="order_detail">Confirmed Order</ion-label>
+      <ion-label class="order_detail">Food Prepared</ion-label>
+      <ion-label class="order_detail" *ngIf = "status== 'accepted' || status== 'ongoing'">In Transit<span class="order_status">will reach in {{distanceval}} mins</span>
+        <ion-label class="order_detail" *ngIf = "status== 'completed' || status== 'delivered'">Received Food</ion-label>
+      </ion-label>
+
+      <!-- <ion-label class="order_detail">{{util.translate('Payment')}}<span class="order_status">{{payMethod}}</span>
+      </ion-label> -->
+
+    </div>
+
+  </div>
+</ion-content>
+
+<ion-footer (click)="viewDetails()">
+  <ion-toolbar color="medium">
+    <ion-label color="light" ><span style="margin-left: 10px;"></span>Your order will reach in {{distanceval}} mins</ion-label>
+    <ion-button class="txt_class" slot="end" fill="clear" color="light" style="background-color: #30BF46;">
+     {{util.translate('View Tracking')}}
+    </ion-button>
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+  </ion-toolbar>
+</ion-footer>

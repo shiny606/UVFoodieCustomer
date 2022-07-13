@@ -1,0 +1,155 @@
+
+.main_content_div {
+    width: 100%;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    // padding: 20px;
+    padding-top: 20px;
+    .head_lbl {
+        font-weight: 600;
+        font-size: 18px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        padding-left: 20px;
+    }
+    
+    .flex_div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 100%;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        align-items: center;
+        padding: 0px 20px;
+        .first_div {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            .rate_div {
+                border: 1px solid lightgray;
+                color: lightgray;
+                border-radius: 25px;
+                padding: 3px 10px;
+                display: flex;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                flex-direction: row;
+                ion-icon {
+                    font-size: 15px;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+
+                span {
+                    font-size: 18px;
+                    font-weight: 600;
+                    font-family: 'IBM Plex Sans', sans-serif !important;
+                }
+            }
+
+            .rate1 {
+                background: #ed5a74;
+                color: white;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+                border: 1px solid #ed5a74;
+            }
+            .rate2 {
+                background: #f7c007;
+                color: white;
+                border: 1px solid #f7c007;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .rate3 {
+                background: #7bdb7b;
+                color: white;
+                border: 1px solid #7bdb7b;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .rate4 {
+                background: #13ad13;
+                color: white;
+                border: 1px solid #13ad13;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+            .rate5 {
+                background: #085c08;
+                color: white;
+                border: 1px solid #085c08;
+                font-family: 'IBM Plex Sans', sans-serif !important;
+            }
+        }
+
+        .second_div {
+            .rate1 {
+                color: #ed5a74;
+            }
+            .rate2 {
+                color: #f7c007;
+            }
+            .rate3 {
+                color: #7bdb7b;
+            }
+            .rate4 {
+                color: #13ad13;
+            }
+            .rate5 {
+                color: #085c08;
+            }
+        }
+    }
+    .line_div {
+        width: 100%;
+        height: 3px;
+        background: lightgray;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+    }
+
+    .lower_div {
+        padding: 20px;
+        font-family: 'IBM Plex Sans', sans-serif !important;
+        .head_lbl2 {
+            font-weight: 600;
+            font-size: 18px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+
+        .gray_div {
+            margin-top: 10px;
+            height: 70px;
+            width: 70px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            background: #f3f3f3;
+            position: relative;
+
+            .camera {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+            }
+        }
+
+        ion-textarea {
+            font-family: 'IBM Plex Sans', sans-serif !important;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .small_gray {
+            font-size: 12px;
+            color: gray;
+            margin-top: 10px;
+            font-family: 'IBM Plex Sans', sans-serif !important;
+        }
+    }
+}
+.sub_btn {
+    --background: var(--ion-color-primary);
+    --border-radius: 5px;
+    height: 50px;
+    font-family: 'IBM Plex Sans', sans-serif !important;
+    font-weight: 600;
+}
+

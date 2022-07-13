@@ -1,0 +1,39 @@
+
+<ion-content>
+  <ion-row *ngIf="!loaded"> 
+    <ion-col size="12" class="ion-no-padding">
+  <div  *ngFor="let item of [1,2,3,4,5,6,7,8]">
+    <ion-list >
+      <ion-item>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+        
+      </ion-item>
+    </ion-list>
+  </div>
+  </ion-col>
+  </ion-row>
+
+  <ion-grid style="margin-top: 10px;" *ngIf="loaded">
+    <ion-toolbar>   
+      <ion-title style="color: #000000;text-align: left;font-size: 16px;"><b>{{videoTitle}}</b></ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="goDismiss()">
+          <ion-icon name="close-outline" style="width: 25px;height: 25px; color: black;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar> 
+  <div class="o-video">
+ <iframe allowfullscreen [src]="trustedDashboardUrl"></iframe>
+ </div>
+  </ion-grid>
+</ion-content>

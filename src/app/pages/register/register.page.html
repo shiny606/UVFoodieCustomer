@@ -1,0 +1,134 @@
+
+<ion-content class="ion-padding">
+ 
+
+  <form #loginForm="ngForm" novalidate>
+    <ion-text class="title">
+      <h1 style="margin-top: 45px; font-size: 18px;"><b>Sign Up</b></h1>
+    </ion-text>
+    <ion-list lines="none">
+      <ion-label>Name</ion-label>
+      <ion-text color="danger" style="float: right;">
+        <p [hidden]="full_name.valid || submitted == false" class="ion-padding-start">
+          {{util.translate('Name is required')}}
+        </p>
+      </ion-text>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.first_name" type="text" 
+          name="full_name" #full_name="ngModel" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-label>Email<span style="color:#db2e2e;">*</span></ion-label>
+      <ion-text color="danger" style="float: right;">
+        <p [hidden]="email.valid || submitted == false" class="ion-padding-start">
+          {{util.translate('Use a valid email')}}
+        </p>
+      </ion-text>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.email" type="email"  name="email"
+          #email="ngModel" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+      
+      <ion-label>Password <span style="color:#db2e2e;">*</span></ion-label>
+      <ion-text color="danger" style="float: right;">
+        <p [hidden]="password.valid || submitted == false || passwordInvalid == true" class="ion-padding-start">
+          {{util.translate('Use a valid password')}}
+        </p>
+      </ion-text>
+   
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.password" name="password" 
+          type="password" #password="ngModel" required [type]="showPassword ? 'text' : 'password'" clearOnEdit="false">
+        </ion-input>
+        <ion-icon slot="end" [name]="showPassword ? 'eye-off' : 'eye'" (click)="onPasswordToggle()"></ion-icon>
+      </ion-item>
+
+      <p style="color: #A1A1A2;">Use 8 or more characters with a mix of letters, numbers, and symbols. (e.g. Test@123)</p>
+      
+
+      <ion-label>Mobile <span style="color:#db2e2e;">*</span></ion-label>
+      <ion-text color="danger" style="float: right;">
+        <p [hidden]="mobile.valid || submitted == false" class="ion-padding-start">
+          {{util.translate('Use a valid mobile')}}
+        </p>
+      </ion-text>
+      <ion-item lines="none">
+        <ion-input [(ngModel)]="login.mobile" name="mobile" 
+          type="tel" #mobile="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      
+
+      
+
+      
+
+      
+
+
+    </ion-list>
+
+    <!-- <div class="div_chk">
+      <ion-checkbox [checked]="login.check" [(ngModel)]="login.check" name="checkls" #checkls="ngModel" color="light"
+        class="chk"></ion-checkbox>
+      <ion-label class="lbl_police"><span class="span_term">
+          {{util.translate('By clicking on the I agree button click, download or if you use the Application, you agree
+          to be bound by the')}}
+        </span>
+        <u> <a style="color:var(--ion-color-primary);" (click)="open('eula')"> {{util.translate('EULA certificate')}}
+          </a> </u>
+        {{util.translate('and')}}
+        <u> <a style="color: var(--ion-color-primary);" (click)="open('privacy')"> {{util.translate('Privacy Policy')}}
+          </a> </u>
+        {{util.translate('of this app')}}.
+      </ion-label>
+    </div> -->
+
+    <ion-row >
+      <ion-checkbox   checked="true" checked="{{checkOption}}" (ionChange)="checkboxproceedOption($event)"></ion-checkbox>
+      <h5 style="font-size: 12px;
+      text-align: left;
+      color: #A1A1A2;
+      display: inline-block;
+      width: 85%;
+      margin: 0 0 0 5px !important;
+      position: relative;
+      top: 5px;" > I agree to the <span style="color: #000000;"  ><a href="https://www.uvfoodie.com/index.php/terms_and_condition"><u><b>Terms</b></u></a></span> and <span style="color: #000000;" ><a href="https://www.uvfoodie.com/index.php/privacy_policy"><u><b> Privacy Policy.<span style="color:#db2e2e;" >*</span></b></u></a></span></h5>
+     </ion-row>
+    <!-- <ion-text color="danger">
+      <p [hidden]="checkls.valid || submitted == false" class="ion-padding-start">
+        {{util.translate('Please Accept Privacy Policy')}}
+      </p>
+    </ion-text> -->
+
+    <ion-row class="ion-no-margin ion-no-padding">
+      <ion-col class="ion-no-margin ion-no-padding">
+        <ion-button class="btn_class" (click)="onLogin(loginForm)" type="submit" expand="block" [disabled]="!checkOption">
+          <span *ngIf="!isLogin"> {{util.translate('Sign Up')}}</span>
+          <ion-spinner name="circles" *ngIf="isLogin"></ion-spinner>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <p class="error" style="text-align: center;">or</p>
+   
+     
+   
+    
+  
+    <ion-button class="btn_class" color="medium" (click)="googleSignin()" expand="block" ><span slot="start" style="position: absolute;
+      left: 0;"> <ion-img src="assets/google.png" style="width: 25px;height: 25px;"></ion-img> </span><span >Sign Up with Google</span></ion-button>
+   
+
+  </form>
+  <p class="createAcc" (click)="back()">{{util.translate('Already have an account?')}}
+    <span class="registerTag"><u>{{util.translate('Log In')}}</u></span>
+  </p>
+  <div style="float: right;" class="btn_classSkip"  (click)="loginSkip()" >
+    <h2 style="text-align: center;margin-top: 10px;color: #ffffff;font-size: 17px;" expand="block" >Skip</h2>
+  </div>
+
+</ion-content>

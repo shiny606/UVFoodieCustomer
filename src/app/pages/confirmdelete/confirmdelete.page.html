@@ -1,0 +1,23 @@
+<ion-content  style="height: 50%;">
+  <ion-grid >
+    <ion-toolbar color="back">
+      <ion-title>Confirm</ion-title>
+      <ion-icon  name="close-circle-outline" slot="end" class="close" style="color: #A1A1A2;" (click)="closeClick()"></ion-icon>
+    </ion-toolbar>
+   
+      <ion-col  class="invest">
+      
+        <h1 class="title" style="margin-left: 20px;">Are you sure want to delete the selected address?</h1>
+       
+    </ion-col>
+
+  <ion-row  >
+    <ion-col size = "12" style="text-align: center;">
+      <ion-button size = "6" color="mediums" (click)="cancelClick()">Cancel</ion-button>
+      <ion-button size = "6" color="medium" (click)="confirmClick()">Yes, I am sure</ion-button>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+  
+  </ion-content>
+  

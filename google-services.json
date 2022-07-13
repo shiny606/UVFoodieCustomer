@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236198220187",
+    "project_id": "uvfoodie",
+    "storage_bucket": "uvfoodie.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236198220187:android:e09acff2265e67685f913e",
+        "android_client_info": {
+          "package_name": "com.ionic.UVFoodie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw85Y1HcQM6QhHY6iX3IX3pkbOltX38Pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
